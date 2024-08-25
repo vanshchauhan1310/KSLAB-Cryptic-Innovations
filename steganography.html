@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography - KSLAB Cryptic Innovations</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .navbar-custom {
+            background-color: #003b6f;
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: white;
+            font-weight: bold;
+        }
+        .navbar-custom .navbar-brand:hover,
+        .navbar-custom .nav-link:hover {
+            color: #ffcc00;
+        }
+        .navbar-custom .dropdown-menu {
+            background-color: #003b6f;
+        }
+        .navbar-custom .dropdown-item {
+            color: white;
+        }
+        .navbar-custom .dropdown-item:hover {
+            background-color: #ffcc00;
+            color: #003b6f;
+        }
+        .navbar-custom .navbar-toggler {
+            border: none;
+        }
+        .navbar-custom .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.8)" stroke-width="2" d="M5 8h20M5 14h20M5 20h20"/%3E%3C/svg%3E');
+        }
+        .navbar-nav {
+            text-align: center;
+        }
+        .navbar-nav .nav-item {
+            display: inline-block;
+        }
+        .stego-section {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="text-center text-white bg-dark py-2"> KSLAB Cryptic Innovations</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="index.html">Dr. Keshav Sinha</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Publications
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="journal.html">Journal Papers</a>
+                        <a class="dropdown-item" href="conference.html">Conference Papers</a>
+                        <a class="dropdown-item" href="book.html">Books</a>
+                        <a class="dropdown-item" href="bookchapters.html">Book Chapters</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lab Practical
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="caesarcipher.html">Caesar Cipher</a>
+                        <a class="dropdown-item" href="password.html">Password Strength Checker</a>
+                        <a class="dropdown-item" href="steganography.html">Steganography</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Notes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="computergraphic.html">Computer Graphics</a>
+                        <a class="dropdown-item" href="softwareengg.html">Software Engineering</a>
+                        <a class="dropdown-item" href="database.html">Database Management System</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Projects
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="ongoing.html">Ongoing Projects</a>
+                        <a class="dropdown-item" href="completed.html">Completed Projects</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Forums
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
+                        <a class="dropdown-item" href="forum.html">Security Discussions</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h1 class="display-3"> <b> Steganography </b> </h1>
+        <p>Steganography is the practice of hiding information within a non-secret message or object so that it's not obvious to human inspection. It is used by governments, hackers, and organizations to conceal data in physical objects and digital media files.</p>
+        
+        <div class="row stego-section">
+            <div class="col-md-6">
+                <h2>Image Selection</h2>
+                <p>Select an image: <input type="file" id="file" /><br></p>
+                <h2>Picture Preview</h2>
+                <p><canvas id="canvas" style="width: 300px;"></canvas><br></p>
+            </div>
+            <div class="col-md-6">
+                <h2>Hide Information</h2>
+                <p>Steganographic information: <textarea id="message"></textarea><br></p>
+                <p><button id="encode" class="btn btn-primary">Encode Information</button><br></p>
+                <h2>Steganographic Image</h2>
+                <p><img id="output" style="width: 300px;"><br></p>
+                <button id="decode" class="btn btn-secondary">Decode Information</button><br>
+                <p>Decoded Message: <div id="message_decoded"></div><br></p>
+                <button id="download" class="btn btn-success">Download Steganography Image</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3 bg-dark text-white">
+        <p>Dr. Keshav Sinha &copy; 2024</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+
+        window.onload = function() {
+
+            var input = document.getElementById('file');
+
+            input.addEventListener('change', importImage);
+
+            var encodeButton = document.getElementById('encode');
+
+            encodeButton.addEventListener('click', encode);
+
+            var decodeButton = document.getElementById('decode');
+
+            decodeButton.addEventListener('click', decode);
+
+
+
+            var downloadButton = document.getElementById('download');
+
+            downloadButton.style.display = 'none'; // Hide download button initially
+
+            downloadButton.onclick = function() {
+
+                var canvas = document.getElementById('canvas');
+
+                var link = document.createElement('a');
+
+                link.download = 'stego_image.png';
+
+                link.href = canvas.toDataURL('image/png');
+
+                link.click();
+
+            };
+
+        };
+
+        
+
+        var importImage = function(e) {
+
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+
+                var img = new Image();
+
+                img.onload = function() {
+
+                    var ctx = document.getElementById('canvas').getContext('2d');
+
+                    ctx.canvas.width = img.width;
+
+                    ctx.canvas.height = img.height;
+
+                    ctx.drawImage(img, 0, 0);
+
+                };
+
+                img.src = event.target.result;
+
+            };
+
+            reader.readAsDataURL(e.target.files[0]);
+
+        };
+
+        
+
+        var encode = function() {
+
+            var message = document.getElementById('message').value;
+
+            var output = document.getElementById('output');
+
+            var canvas = document.getElementById('canvas');
+
+            var ctx = canvas.getContext('2d');
+
+            var pixelCount = ctx.canvas.width * ctx.canvas.height;
+
+            if ((message.length + 1) * 16 > pixelCount * 4 * 0.75) {
+
+                alert('Content is too large, exceeds the maximum writable amount');
+
+                return;
+
+            }
+
+
+
+            var imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+            encodeMessage(imageData.data, message);
+
+            ctx.putImageData(imageData, 0, 0);
+
+            alert('Steganography successful, information has been hidden in the image');
+
+            output.src = canvas.toDataURL();
+
+            document.getElementById('download').style.display = 'inline-block';
+
+        };
+
+
+
+        var decode = function() {
+
+            var ctx = document.getElementById('canvas').getContext('2d');
+
+            var imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+            
+
+            var message = decodeMessage(imageData.data);
+
+            alert(message);
+
+            document.getElementById('message_decoded').innerHTML = message;
+
+        };
+
+
+
+        var getNextLocation = function(history, total) {
+
+            var pos = history.length;
+
+            var loc = Math.abs(pos + 1) % total;
+
+            while (true) {
+
+                if (loc >= total) {
+
+                    loc = 0;
+
+                } else if (history.indexOf(loc) >= 0) {
+
+                    loc++;
+
+                } else if ((loc + 1) % 4 === 0) {
+
+                    loc++;
+
+                } else {
+
+                    history.push(loc);
+
+                    return loc;
+
+                }
+
+            }
+
+        };
+
+
+
+        var setBit = function(number, location, bit) {
+
+            return (number & ~(1 << location)) | (bit << location);
+
+        };
+
+
+
+        var getBitsFromNumber = function(number) {
+
+            var bits = [];
+
+            for (var i = 0; i < 16; i++) {
+
+                bits.push(getBit(number, i));
+
+            }
+
+            return bits;
+
+        };
+
+
+
+        var getBit = function(number, location) {
+
+            return ((number >> location) & 1);
+
+        };
+
+
+
+        var getMessageBits = function(message) {
+
+            var messageBits = [];
+
+            for (var i = 0; i < message.length; i++) {
+
+                var code = message.charCodeAt(i);
+
+                messageBits = messageBits.concat(getBitsFromNumber(code));
+
+            }
+
+            return messageBits;
+
+        };
+
+
+
+        var encodeMessage = function(colors, message) {
+
+            var messageBits = getBitsFromNumber(message.length);
+
+            messageBits = messageBits.concat(getMessageBits(message));
+
+            var history = [];
+
+            var pos = 0;
+
+            while (pos < messageBits.length) {
+
+                var loc = getNextLocation(history, colors.length);
+
+                colors[loc] = setBit(colors[loc], 0, messageBits[pos]);
+
+                while ((loc + 1) % 4 !== 0) {
+
+                    loc++;
+
+                }
+
+                colors[loc] = 255;
+
+                pos++;
+
+            }
+
+        };
+
+     
+
+        var decodeMessage = function(colors) {
+
+            var history = [];
+
+            var messageSize = getNumberFromBits(colors, history);
+
+            if ((messageSize + 1) * 16 > colors.length * 0.75) {
+
+                return '';
+
+            }
+
+            var message = [];
+
+            for(var i = 0; i < messageSize; i++) {
+
+                var code = getNumberFromBits(colors, history);
+
+                message.push(String.fromCharCode(code));
+
+            }
+
+            return message.join('');
+
+        };
+
+
+
+        var getNumberFromBits = function(bytes, history) {
+
+            var number = 0;
+
+            var pos = 0;
+
+            while (pos < 16) {
+
+                var loc = getNextLocation(history, bytes.length);
+
+                var bit = getBit(bytes[loc], 0);
+
+                number = setBit(number, pos, bit);
+
+                pos++;
+
+            }
+
+            return number;
+
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Discussions - KSLAB Cryptic Innovations</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .navbar-custom {
+            background-color: #003b6f; /* Ossan Blue background for the navbar */
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: white; /* White text color for navbar items */
+            font-weight: bold; /* Bold font */
+        }
+        .navbar-custom .navbar-brand:hover {
+            color: #ffcc00; /* Yellow text color on hover */
+        }
+        .navbar-custom .nav-link:hover {
+            color: #ffcc00; /* Yellow text color on hover */
+        }
+        .navbar-custom .dropdown-menu {
+            background-color: #003b6f; /* Ossan Blue background for dropdown menus */
+        }
+        .navbar-custom .dropdown-item {
+            color: white; /* White text color for dropdown items */
+        }
+        .navbar-custom .dropdown-item:hover {
+            background-color: #ffcc00; /* Yellow background on hover */
+            color: #003b6f; /* Ossan Blue text color on hover */
+        }
+        .navbar-custom .navbar-toggler {
+            border: none; /* Remove border */
+        }
+        .navbar-custom .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.8)" stroke-width="2" d="M5 8h20M5 14h20M5 20h20"/%3E%3C/svg%3E'); /* Change the icon color to white */
+        }
+        .navbar-nav {
+            text-align: center; /* Center-align the navbar items */
+        }
+        .navbar-nav .nav-item {
+            display: inline-block; /* Display items inline */
+        }
+        .discussion {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .discussion button {
+            display: none; /* Hide delete button by default */
+        }
+        .admin .discussion button {
+            display: inline; /* Show delete button for admins */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="text-center text-white bg-dark py-2">KSLAB Cryptic Innovations</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="index.html">Dr. Keshav Sinha</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Publications
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="journal.html">Journal Papers</a>
+                        <a class="dropdown-item" href="conference.html">Conference Papers</a>
+                        <a class="dropdown-item" href="book.html">Books</a>
+						<a class="dropdown-item" href="bookchapters.html">Book Chapters</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lab Practical
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="caesarcipher.html">Caesar Cipher</a>
+                        <a class="dropdown-item" href="password.html">Password Strength Checker</a>
+                        <a class="dropdown-item" href="steganography.html">Steganography</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Notes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="computergraphic.html">Computer Graphics</a>
+                        <a class="dropdown-item" href="softwareengg.html">Software Engineering</a>
+                        <a class="dropdown-item" href="database.html">Data Base</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Projects
+                    </a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="ongoing.html">Ongoing Projects</a>
+                        <a class="dropdown-item" href="completed.html">Completed Projects</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Forums
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
+                        <a class="dropdown-item" href="forum.html">Security Discussions</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h2>Security Discussions Forum</h2>
+
+        <div class="form-group">
+            <label for="discussionTitle">Discussion Title</label>
+            <input type="text" class="form-control" id="discussionTitle" placeholder="Enter discussion title">
+        </div>
+        <div class="form-group">
+            <label for="discussionContent">Discussion Content</label>
+            <textarea class="form-control" id="discussionContent" rows="3" placeholder="Enter discussion content"></textarea>
+        </div>
+        <button class="btn btn-primary" id="postButton">Post Discussion</button>
+
+        <div id="discussionsContainer" class="my-4"></div>
+    </div>
+
+    <footer class="text-center py-3 bg-dark text-white">
+        <p>Dr. Keshav Sinha &copy; 2024</p>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const postButton = document.getElementById('postButton');
+            const discussionsContainer = document.getElementById('discussionsContainer');
+            const titleInput = document.getElementById('discussionTitle');
+            const contentInput = document.getElementById('discussionContent');
+            const admin = true; // Change to false for non-admin features
+
+            function loadDiscussions() {
+                const discussions = JSON.parse(localStorage.getItem('discussions')) || [];
+                discussionsContainer.innerHTML = '';
+                discussions.forEach((discussion, index) => {
+                    const discussionElement = document.createElement('div');
+                    discussionElement.className = 'discussion';
+                    discussionElement.innerHTML = `
+                        <h5>${discussion.title}</h5>
+                        <p>${discussion.content}</p>
+                        ${admin ? `<button class="btn btn-danger" onclick="deleteDiscussion(${index})">Delete</button>` : ''}
+                    `;
+                    discussionsContainer.appendChild(discussionElement);
+                });
+            }
+
+            function saveDiscussion(title, content) {
+                const discussions = JSON.parse(localStorage.getItem('discussions')) || [];
+                discussions.push({ title, content });
+                localStorage.setItem('discussions', JSON.stringify(discussions));
+                loadDiscussions();
+            }
+
+            postButton.addEventListener('click', function() {
+                const title = titleInput.value;
+                const content = contentInput.value;
+                if (title && content) {
+                    saveDiscussion(title, content);
+                    titleInput.value = '';
+                    contentInput.value = '';
+                }
+            });
+
+            window.deleteDiscussion = function(index) {
+                let discussions = JSON.parse(localStorage.getItem('discussions')) || [];
+                discussions.splice(index, 1);
+                localStorage.setItem('discussions', JSON.stringify(discussions));
+                loadDiscussions();
+            };
+
+            loadDiscussions();
+        });
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

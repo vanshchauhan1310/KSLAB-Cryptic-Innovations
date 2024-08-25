@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Papers - KSLAB Cryptic Innovations</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .navbar-custom {
+            background-color: #003b6f; /* Ossan Blue background for the navbar */
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: white; /* White text color for navbar items */
+            font-weight: bold; /* Bold font */
+        }
+        .navbar-custom .navbar-brand:hover {
+            color: #ffcc00; /* Yellow text color on hover */
+        }
+        .navbar-custom .nav-link:hover {
+            color: #ffcc00; /* Yellow text color on hover */
+        }
+        .navbar-custom .dropdown-menu {
+            background-color: #003b6f; /* Ossan Blue background for dropdown menus */
+        }
+        .navbar-custom .dropdown-item {
+            color: white; /* White text color for dropdown items */
+        }
+        .navbar-custom .dropdown-item:hover {
+            background-color: #ffcc00; /* Yellow background on hover */
+            color: #003b6f; /* Ossan Blue text color on hover */
+        }
+        .navbar-custom .navbar-toggler {
+            border: none; /* Remove border */
+        }
+        .navbar-custom .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.8)" stroke-width="2" d="M5 8h20M5 14h20M5 20h20"/%3E%3C/svg%3E'); /* Change the icon color to white */
+        }
+        .navbar-nav {
+            text-align: center; /* Center-align the navbar items */
+        }
+        .navbar-nav .nav-item {
+            display: inline-block; /* Display items inline */
+        }
+        .conference-paper {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="text-center text-white bg-dark py-2">KSLAB Cryptic Innovations</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="index.html">Dr. Keshav Sinha</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Publications
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="journal.html">Journal Papers</a>
+                        <a class="dropdown-item" href="conference.html">Conference Papers</a>
+                        <a class="dropdown-item" href="book.html">Books</a>
+						<a class="dropdown-item" href="bookchapters.html">Book Chapters</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lab Practical
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="caesarcipher.html">Caesar Cipher</a>
+                        <a class="dropdown-item" href="password.html">Password Strength Checker</a>
+                       <a class="dropdown-item" href="steganography.html">Steganography</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Notes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="computergraphic.html">Computer Graphics</a>
+                        <a class="dropdown-item" href="softwareengg.html">Software Engineering</a>
+                        <a class="dropdown-item" href="database.html">Data Base</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Projects
+                    </a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="ongoing.html">Ongoing Projects</a>
+                        <a class="dropdown-item" href="completed.html">Completed Projects</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Forums
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
+                        <a class="dropdown-item" href="forum.html">Security Discussions</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h2>Conference Papers</h2>
+
+        <div class="conference-paper">
+            <h5>Priya A, Sharma S, Sinha K, Yogesh Y. Community Detection in Networks: A Comparative study.</h5>
+            <p>In 2023 International Conference on Device Intelligence, Computing and Communication Technologies (DICCT) 2023 Mar 17 (pp. 505-510). IEEE.</p>
+        </div>
+
+        <div class="conference-paper">
+            <h5>Karmakar M, Priya A, Sinha K, Verma M. Shrinkable Cryptographic Technique Using Involutory Function for Image Encryption.</h5>
+            <p>In International Conference on Advanced Network Technologies and Intelligent Computing 2022 Dec 22 (pp. 275-289). Cham: Springer Nature Switzerland.</p>
+        </div>
+
+        <div class="conference-paper">
+            <h5>Verma N, Sharma S, Sinha K, Paul P, Amritanjali. Selection on Traditional Cryptographic Algorithm for Real-Time Video Transmission and Storage: A Study.</h5>
+            <p>In Nanoelectronics, Circuits and Communication Systems: Proceeding of NCCS 2018 2020 (pp. 229-238). Springer Singapore.</p>
+        </div>
+
+        <div class="conference-paper">
+            <h5>Sinha K, Kumari R, Priya A, Paul P. A computer vision-based gesture recognition using hidden Markov model.</h5>
+            <p>In Innovations in Soft Computing and Information Technology: Proceedings of ICEMIT 2017, Volume 3 2019 (pp. 55-67). Springer Singapore.</p>
+        </div>
+
+        <div class="conference-paper">
+            <h5>Sinha K, Paul P. An underground mine safety of personnel’s using IoT.</h5>
+            <p>In Nanoelectronics, Circuits and Communication Systems: Proceeding of NCCS 2017. 2019:77-88.</p>
+        </div>
+
+        <div class="conference-paper">
+            <h5>Priya A, Sinha K, Darshani MP, Sahana SK. A novel multimedia encryption and decryption technique using binary tree traversal.</h5>
+            <p>In Lecture Notes in Electrical Engineering. In Proceedings of the Second International Conference on Microelectronics, Computing & Communication Systems (MCCS 2017) (pp. 163-178).</p>
+        </div>
+
+        <div class="conference-paper">
+            <h5>Priya A, Sinha K, Choudhary S, Pridarshini S. Image Denoising Technique Using Various Filters Models: A Survey.</h5>
+            <p>In 2018 International Conference on Computing, Power and Communication Technologies (GUCON) 2018 Sep 28 (pp. 919-923). IEEE.</p>
+        </div>
+
+        <div class="conference-paper">
+            <h5>Sinha K, Choudhary S, Paul S, Paul P. Security of Multimedia in Cloud using Secret Shared Key.</h5>
+            <p>In 2018 International Conference on Computing, Power and Communication Technologies (GUCON) 2018 Sep 28 (pp. 908-912). IEEE.</p>
+        </div>
+
+        <div class="conference-paper">
+            <h5>Sinha K, Priya A, Khowas M. A framework for budget allocation and optimization using particle swarm optimization.</h5>
+            <p>In Advances in Computational Intelligence: Proceedings of International Conference on Computational Intelligence 2015 2017 (pp. 149-158). Springer Singapore.</p>
+        </div>
+    </div>
+
+    <footer class="text-center py-3 bg-dark text-white">
+        <p>Dr. Keshav Sinha &copy; 2024</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

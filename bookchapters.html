@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Chapters - KSLAB Cryptic Innovations</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .navbar-custom {
+            background-color: #003b6f; /* Ossan Blue background for the navbar */
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: white; /* White text color for navbar items */
+            font-weight: bold; /* Bold font */
+        }
+        .navbar-custom .navbar-brand:hover {
+            color: #ffcc00; /* Yellow text color on hover */
+        }
+        .navbar-custom .nav-link:hover {
+            color: #ffcc00; /* Yellow text color on hover */
+        }
+        .navbar-custom .dropdown-menu {
+            background-color: #003b6f; /* Ossan Blue background for dropdown menus */
+        }
+        .navbar-custom .dropdown-item {
+            color: white; /* White text color for dropdown items */
+        }
+        .navbar-custom .dropdown-item:hover {
+            background-color: #ffcc00; /* Yellow background on hover */
+            color: #003b6f; /* Ossan Blue text color on hover */
+        }
+        .navbar-custom .navbar-toggler {
+            border: none; /* Remove border */
+        }
+        .navbar-custom .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.8)" stroke-width="2" d="M5 8h20M5 14h20M5 20h20"/%3E%3C/svg%3E'); /* Change the icon color to white */
+        }
+        .navbar-nav {
+            text-align: center; /* Center-align the navbar items */
+        }
+        .navbar-nav .nav-item {
+            display: inline-block; /* Display items inline */
+        }
+        .book-chapter {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="text-center text-white bg-dark py-2">KSLAB Cryptic Innovations</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="index.html">Dr. Keshav Sinha</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Publications
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="journal.html">Journal Papers</a>
+                        <a class="dropdown-item" href="conference.html">Conference Papers</a>
+                        <a class="dropdown-item" href="book.html">Books</a>
+                        <a class="dropdown-item" href="bookchapters.html">Book Chapters</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lab Practical
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="caesarcipher.html">Caesar Cipher</a>
+                        <a class="dropdown-item" href="password.html">Password Strength Checker</a>
+                        <a class="dropdown-item" href="steganography.html">Steganography</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Notes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="computergraphic.html">Computer Graphics</a>
+                        <a class="dropdown-item" href="softwareengg.html">Software Engineering</a>
+                        <a class="dropdown-item" href="database.html">Database Management System</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Projects
+                    </a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="ongoing.html">Ongoing Projects</a>
+                        <a class="dropdown-item" href="completed.html">Completed Projects</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Forums
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
+                        <a class="dropdown-item" href="forum.html">Security Discussions</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h2>Book Chapters</h2>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/climate-change-on-our-plates" target="_blank">
+                <h5>Rawat H, Sinha K. <i>Climate Change on Our Plates: Protecting Food Safety and Security in a Warming World</i>. In Change Dynamics in Healthcare, Technological Innovations, and Complex Scenarios 2024 (pp. 28-49). IGI Global.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/fortifying-data-security" target="_blank">
+                <h5>Srivastava, Naman, Harshita Sharma, Akshita Maliyal, Madhav Verma, and Keshav Sinha. <i>Fortifying Data Security in the Evolving Digital Landscape: Challenges and Solutions</i>. In Handbook of Research on Innovative Approaches to Information Technology in Library and Information Science, pp. 209-232. IGI Global, 2024.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/intersection-of-biometrics-technology" target="_blank">
+                <h5>Karmakar, M., & Sinha, K. <i>The Intersection of Biometrics Technology and Machine Learning: A Scientometrics Analysis</i>. In Machine Learning in Healthcare and Security (pp. 163-173). CRC Press.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/metaverse-and-digital-libraries" target="_blank">
+                <h5>Sinha, Keshav. <i>The Metaverse and Digital Libraries: Ensuring Safe and Secure Access to Information</i>. In Handbook of Research on Advancements of Contactless Technology and Service Innovation in Library and Information Science, pp. 1-22. IGI Global, 2023.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/yoga-cyclical-mastalgia" target="_blank">
+                <h5>Jaiswal, Garima, and Keshav Sinha. <i>Yoga: an ancient healing approach for cyclical mastalgia</i>. In Perspectives on Coping Strategies for Menstrual and Premenstrual Distress, pp. 237-261. IGI Global, 2023.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/yoga-stress-removal-toolkit" target="_blank">
+                <h5>Jaiswal, Garima, Mousumi Karmakar, and Keshav Sinha. <i>Yoga: A Stress Removal Toolkit During War From the Women's Perspective</i>. In Acceleration of the Biopsychosocial Model in Public Health, pp. 137-167. IGI Global, 2023.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/nexus-of-war-violence-rights" target="_blank">
+                <h5>Gupta, Naina Eve, Kishlay Kumar, and Keshav Sinha. <i>The Nexus of War, Violence, and Rights: A History of War-Torn Afghanistan</i>. In Handbook of Research on War Policies, Strategies, and Cyber Wars, pp. 334-351. IGI Global, 2023.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/economic-challenges-russia-ukraine" target="_blank">
+                <h5>Kumar, Kishlay, Dimpal Singhania, Karan Pratap Singh, Puja Mishra, and Keshav Sinha. <i>Navigating the Economic Challenges of the Russia-Ukraine Conflict on India</i>. In Handbook of Research on War Policies, Strategies, and Cyber Wars, pp. 218-238. IGI Global, 2023.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/skin-cancer-lesion-detection" target="_blank">
+                <h5>Kumar, Sourav, Garima Jaiswal, and Keshav Sinha. <i>Skin Cancer Lesion Detection Using Improved CNN Techniques</i>. In Handbook of Research on Technological Advances of Library and Information Science in Industry 5.0, pp. 355-377. IGI Global, 2023.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/right-to-correct-information" target="_blank">
+                <h5>Sinha, Keshav, Partha Paul, Megha Sinha, Devesh K. Upadhyay, and Roma Kumari. <i>Right to Correct Information in the Cyber World</i>. In Handbook of Research on Cyber Approaches to Public Administration and Social Policy, pp. 563-582. IGI Global, 2022.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/misleading-information-social-media" target="_blank">
+                <h5>Narayan, Ritushree, Keshav Sinha, and Devesh K. Upadhyay. <i>An analysis and detection of misleading information on social media using machine learning techniques</i>. In Handbook of Research on Cyber Approaches to Public Administration and Social Policy, pp. 520-541. IGI Global, 2022.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/framework-for-politics-law-government" target="_blank">
+                <h5>Sinha, Keshav, Roma Kumari, Rakesh Kumar Chandan, Partha Paul, Naghma Khatoon, and Runmi Kundu. <i>A New Framework for Politics, Law, and Government in the Digital Era: A Judge-Based Political System</i>. In Handbook of Research on Digital Violence and Discrimination Studies, pp. 589-609. IGI Global, 2022.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/policies-and-social-work-against-women-violence" target="_blank">
+                <h5>Sinha, Keshav, Roma Kumari, Puja Kumari, Saria Parween, and Karan Pratap Singh. <i>Policies and social work against women violence</i>. In Research Anthology on Child and Domestic Abuse and Its Prevention, pp. 241-261. IGI Global, 2022.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/environmental-impact-of-5g-technology" target="_blank">
+                <h5>Chandan, Rakesh Kumar, Prem Nath Suman, and Keshav Sinha. <i>The Environmental Impact of 5G Technology on Humans and Animals</i>. In Handbook of Research on Knowledge and Organization Systems in Library and Information Science, pp. 48-68. IGI Global, 2021.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/iot-real-time-application-in-agriculture" target="_blank">
+                <h5>Parween, Saria, Rasha Subhi Hameed, and Keshav Sinha. <i>IoT and its real-time application in agriculture</i>. In Handbook of Research on Knowledge and Organization Systems in Library and Information Science, pp. 103-123. IGI Global, 2021.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/voice-based-speaker-identification" target="_blank">
+                <h5>Sinha, Keshav, Rasha Subhi Hameed, Partha Paul, and Karan Pratap Singh. <i>Voice-Based Speaker Identification and Verification</i>. In Handbook of Research on Knowledge and Organization Systems in Library and Information Science, pp. 288-316. IGI Global, 2021.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/sql-injection-on-blockchain-database" target="_blank">
+                <h5>Sinha, Keshav, and Madhav Verma. <i>The Detection of SQL Injection on Blockchain-Based Database</i>. In Revolutionary Applications of Blockchain-Enabled Privacy and Access Control, pp. 234-262. IGI Global, 2021.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/supervised-machine-learning-technique" target="_blank">
+                <h5>Sinha, Keshav. <i>A Study on Supervised Machine Learning Technique to Detect Anomalies in Networks</i>. In Handbook of Research on Library Response to the COVID-19 pandemic, pp. 209-230. IGI Global, 2021.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/automated-detection-sql-injection" target="_blank">
+                <h5>Sinha, Keshav, and Amit Kumar Keshari. <i>Automated Detection of SQL Injection Attack on Blockchain-Based Database</i>. In Handbook of Research on Library Response to the COVID-19 pandemic, pp. 321-341. IGI Global, 2021.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/impact-of-ict-indian-education-system" target="_blank">
+                <h5>Sinha, Keshav, and Manu PriyaDarshani. <i>Impact of information and communication technology in the Indian education system during COVID-19</i>. In Handbook of Research on Library Response to the COVID-19 Pandemic, pp. 358-375. IGI Global, 2021.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/evolutionary-technique-predict-sales-covid" target="_blank">
+                <h5>PriyaDarshani, Manu, Mohan Prasad Sinha, and Keshav Sinha. <i>A study on evolutionary technique to predict the sales during COVID-19</i>. In Handbook of Research on Library Response to the COVID-19 Pandemic, pp. 376-402. IGI Global, 2021.</h5>
+            </a>
+        </div>
+
+        <div class="book-chapter">
+            <a href="https://www.example.com/network-security-approaches" target="_blank">
+                <h5>Sinha, Keshav, and Partha Paul. <i>Network Security Approaches in Distributed Environment</i>. In Research Anthology on Artificial Intelligence Applications in Security, pp. 1370-1398. IGI Global, 2021.</h5>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-3 bg-dark text-white">
+        <p>Dr. Keshav Sinha &copy; 2024</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
