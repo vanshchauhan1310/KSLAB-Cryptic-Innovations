@@ -4,442 +4,431 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steganography - KSLAB Cryptic Innovations</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        .navbar-custom {
-            background-color: #003b6f;
+        :root {
+            --primary-color: #003b6f;
+            --secondary-color: #ffcc00;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+            --card-background: #ffffff;
         }
-        .navbar-custom .navbar-brand,
-        .navbar-custom .nav-link {
-            color: white;
-            font-weight: bold;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .navbar-custom .navbar-brand:hover,
-        .navbar-custom .nav-link:hover {
-            color: #ffcc00;
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
         }
-        .navbar-custom .dropdown-menu {
-            background-color: #003b6f;
+
+        .navcontainer{
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .navbar-custom .dropdown-item {
-            color: white;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .navbar-custom .dropdown-item:hover {
-            background-color: #ffcc00;
-            color: #003b6f;
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
-        .navbar-custom .navbar-toggler {
-            border: none;
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .navbar-custom .navbar-toggler-icon {
-            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.8)" stroke-width="2" d="M5 8h20M5 14h20M5 20h20"/%3E%3C/svg%3E');
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
         }
-        .navbar-nav {
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        main {
+            padding-top: 80px;
+        }
+        .section-title {
+            font-size: 2.5rem;
             text-align: center;
-        }
-        .navbar-nav .nav-item {
-            display: inline-block;
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
         }
         .stego-section {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .stego-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.5rem;
             border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f9f9f9;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background-color: #002b52;
+        }
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        .btn-secondary:hover {
+            background-color: #e6b800;
+        }
+        .btn-success {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        #canvas, #output {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        #message, #message_decoded {
+            width: 100%;
+            min-height: 100px;
+            margin-bottom: 1rem;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 1rem 0;
+            }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            .hamburger {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1 class="text-center text-white bg-dark py-2"> KSLAB Cryptic Innovations</h1>
+        <nav id="navbar">
+            <div class="navcontainer">
+                <a href="index.html" class="logo">KSLAB</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#publications">Publications</a></li>
+                    <li><a href="index.html#lab">Lab Practical</a></li>
+                    <li><a href="index.html#notes">Notes</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#forums">Forums</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <a class="navbar-brand" href="index.html">Dr. Keshav Sinha</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Publications
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                        <a class="dropdown-item" href="journal.html">Journal Papers</a>
-                        <a class="dropdown-item" href="conference.html">Conference Papers</a>
-                        <a class="dropdown-item" href="book.html">Books</a>
-                        <a class="dropdown-item" href="bookchapters.html">Book Chapters</a>
+    <main>
+        <div class="container">
+            <h1 class="section-title" data-aos="fade-up">Steganography</h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+                Steganography is the practice of hiding information within a non-secret message or object so that it's not obvious to human inspection. It is used by governments, hackers, and organizations to conceal data in physical objects and digital media files.
+            </p>
+            
+            <div class="stego-section" data-aos="fade-up" data-aos-delay="400">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Image Selection</h2>
+                        <div class="form-group">
+                            <label for="file">Select an image:</label>
+                            <input type="file" id="file" class="form-control-file">
+                        </div>
+                        <h2>Picture Preview</h2>
+                        <canvas id="canvas"></canvas>
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Lab Practical
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="caesarcipher.html">Caesar Cipher</a>
-                        <a class="dropdown-item" href="password.html">Password Strength Checker</a>
-                        <a class="dropdown-item" href="steganography.html">Steganography</a>
+                    <div class="col-md-6">
+                        <h2>Hide Information</h2>
+                        <div class="form-group">
+                            <label for="message">Steganographic information:</label>
+                            <textarea id="message" class="form-control"></textarea>
+                        </div>
+                        <button id="encode" class="btn btn-primary">Encode Information</button>
+                        <h2>Steganographic Image</h2>
+                        <img id="output" alt="Steganographic output">
+                        <button id="decode" class="btn btn-secondary">Decode Information</button>
+                        <div class="form-group">
+                            <label for="message_decoded">Decoded Message:</label>
+                            <div id="message_decoded" class="form-control"></div>
+                        </div>
+                        <button id="download" class="btn btn-success">Download Steganography Image</button>
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Notes
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                        <a class="dropdown-item" href="computergraphic.html">Computer Graphics</a>
-                        <a class="dropdown-item" href="softwareengg.html">Software Engineering</a>
-                        <a class="dropdown-item" href="database.html">Database Management System</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Projects
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-                        <a class="dropdown-item" href="ongoing.html">Ongoing Projects</a>
-                        <a class="dropdown-item" href="completed.html">Completed Projects</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Forums
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
-                        <a class="dropdown-item" href="forum.html">Security Discussions</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container my-4">
-        <h1 class="display-3"> <b> Steganography </b> </h1>
-        <p>Steganography is the practice of hiding information within a non-secret message or object so that it's not obvious to human inspection. It is used by governments, hackers, and organizations to conceal data in physical objects and digital media files.</p>
-        
-        <div class="row stego-section">
-            <div class="col-md-6">
-                <h2>Image Selection</h2>
-                <p>Select an image: <input type="file" id="file" /><br></p>
-                <h2>Picture Preview</h2>
-                <p><canvas id="canvas" style="width: 300px;"></canvas><br></p>
-            </div>
-            <div class="col-md-6">
-                <h2>Hide Information</h2>
-                <p>Steganographic information: <textarea id="message"></textarea><br></p>
-                <p><button id="encode" class="btn btn-primary">Encode Information</button><br></p>
-                <h2>Steganographic Image</h2>
-                <p><img id="output" style="width: 300px;"><br></p>
-                <button id="decode" class="btn btn-secondary">Decode Information</button><br>
-                <p>Decoded Message: <div id="message_decoded"></div><br></p>
-                <button id="download" class="btn btn-success">Download Steganography Image</button>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <footer class="text-center py-3 bg-dark text-white">
-        <p>Dr. Keshav Sinha &copy; 2024</p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dr. Keshav Sinha - KSLAB Cryptic Innovations</p>
+        </div>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
 
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Sticky navbar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Steganography functions
         window.onload = function() {
-
             var input = document.getElementById('file');
-
             input.addEventListener('change', importImage);
 
             var encodeButton = document.getElementById('encode');
-
             encodeButton.addEventListener('click', encode);
 
             var decodeButton = document.getElementById('decode');
-
             decodeButton.addEventListener('click', decode);
 
-
-
             var downloadButton = document.getElementById('download');
-
             downloadButton.style.display = 'none'; // Hide download button initially
-
             downloadButton.onclick = function() {
-
                 var canvas = document.getElementById('canvas');
-
                 var link = document.createElement('a');
-
                 link.download = 'stego_image.png';
-
                 link.href = canvas.toDataURL('image/png');
-
                 link.click();
-
             };
-
         };
 
-        
-
-        var importImage = function(e) {
-
+        function importImage(e) {
             var reader = new FileReader();
-
             reader.onload = function(event) {
-
                 var img = new Image();
-
                 img.onload = function() {
-
-                    var ctx = document.getElementById('canvas').getContext('2d');
-
-                    ctx.canvas.width = img.width;
-
-                    ctx.canvas.height = img.height;
-
+                    var canvas = document.getElementById('canvas');
+                    var ctx = canvas.getContext('2d');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
                     ctx.drawImage(img, 0, 0);
-
                 };
-
                 img.src = event.target.result;
-
             };
-
             reader.readAsDataURL(e.target.files[0]);
+        }
 
-        };
-
-        
-
-        var encode = function() {
-
+        function encode() {
             var message = document.getElementById('message').value;
-
             var output = document.getElementById('output');
-
             var canvas = document.getElementById('canvas');
-
             var ctx = canvas.getContext('2d');
-
             var pixelCount = ctx.canvas.width * ctx.canvas.height;
-
-            if ((message.length + 1) * 16 > pixelCount * 4 * 0.75) {
-
-                alert('Content is too large, exceeds the maximum writable amount');
-
-                return;
-
-            }
-
-
-
-            var imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-
-            encodeMessage(imageData.data, message);
-
-            ctx.putImageData(imageData, 0, 0);
-
-            alert('Steganography successful, information has been hidden in the image');
-
-            output.src = canvas.toDataURL();
-
-            document.getElementById('download').style.display = 'inline-block';
-
-        };
-
-
-
-        var decode = function() {
-
-            var ctx = document.getElementById('canvas').getContext('2d');
-
-            var imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-
             
+            if ((message.length + 1) * 16 > pixelCount * 4 * 0.75) {
+                alert('Content is too large, exceeds the maximum writable amount');
+                return;
+            }
 
+            var imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+            encodeMessage(imageData.data, message);
+            ctx.putImageData(imageData, 0, 0);
+            alert('Steganography successful, information has been hidden in the image');
+            output.src = canvas.toDataURL();
+            document.getElementById('download').style.display = 'inline-block';
+        }
+
+        function decode() {
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            var imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
             var message = decodeMessage(imageData.data);
+            document.getElementById('message_decoded').textContent = message;
+        }
 
-            alert(message);
-
-            document.getElementById('message_decoded').innerHTML = message;
-
-        };
-
-
-
-        var getNextLocation = function(history, total) {
-
+        function getNextLocation(history, total) {
             var pos = history.length;
-
             var loc = Math.abs(pos + 1) % total;
-
             while (true) {
-
                 if (loc >= total) {
-
                     loc = 0;
-
                 } else if (history.indexOf(loc) >= 0) {
-
                     loc++;
-
                 } else if ((loc + 1) % 4 === 0) {
-
                     loc++;
-
                 } else {
-
                     history.push(loc);
-
                     return loc;
-
                 }
-
             }
+        }
 
-        };
-
-
-
-        var setBit = function(number, location, bit) {
-
+        function setBit(number, location, bit) {
             return (number & ~(1 << location)) | (bit << location);
+        }
 
-        };
-
-
-
-        var getBitsFromNumber = function(number) {
-
+        function getBitsFromNumber(number) {
             var bits = [];
-
             for (var i = 0; i < 16; i++) {
-
                 bits.push(getBit(number, i));
-
             }
-
             return bits;
+        }
 
-        };
-
-
-
-        var getBit = function(number, location) {
-
+        function getBit(number, location) {
             return ((number >> location) & 1);
+        }
 
-        };
-
-
-
-        var getMessageBits = function(message) {
-
+        function getMessageBits(message) {
             var messageBits = [];
-
             for (var i = 0; i < message.length; i++) {
-
                 var code = message.charCodeAt(i);
-
                 messageBits = messageBits.concat(getBitsFromNumber(code));
-
             }
-
             return messageBits;
+        }
 
-        };
-
-
-
-        var encodeMessage = function(colors, message) {
-
+        function encodeMessage(colors, message) {
             var messageBits = getBitsFromNumber(message.length);
-
             messageBits = messageBits.concat(getMessageBits(message));
-
             var history = [];
-
             var pos = 0;
-
             while (pos < messageBits.length) {
-
                 var loc = getNextLocation(history, colors.length);
-
                 colors[loc] = setBit(colors[loc], 0, messageBits[pos]);
-
                 while ((loc + 1) % 4 !== 0) {
-
                     loc++;
-
                 }
-
                 colors[loc] = 255;
-
                 pos++;
-
             }
+        }
 
-        };
-
-     
-
-        var decodeMessage = function(colors) {
-
+        function decodeMessage(colors) {
             var history = [];
-
             var messageSize = getNumberFromBits(colors, history);
-
             if ((messageSize + 1) * 16 > colors.length * 0.75) {
-
                 return '';
-
             }
-
             var message = [];
-
             for(var i = 0; i < messageSize; i++) {
-
                 var code = getNumberFromBits(colors, history);
-
                 message.push(String.fromCharCode(code));
-
             }
-
             return message.join('');
+        }
 
-        };
-
-
-
-        var getNumberFromBits = function(bytes, history) {
-
+        function getNumberFromBits(bytes, history) {
             var number = 0;
-
             var pos = 0;
-
             while (pos < 16) {
-
                 var loc = getNextLocation(history, bytes.length);
-
                 var bit = getBit(bytes[loc], 0);
-
                 number = setBit(number, pos, bit);
-
                 pos++;
-
             }
-
             return number;
-
-        };
-
+        }
     </script>
 </body>
 </html>

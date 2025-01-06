@@ -57,6 +57,74 @@ body.dark-mode {
 }
 
 /* Responsive Styling */
+
+
+/* Light and Dark Mode Styling */
+body.light-mode {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f4f4f9;
+}
+
+/* Page Display Styling */
+.page-display {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    max-width: 80%;
+    height: 70vh;  /* Larger display area for the image */
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-top: 20px;  /* To give some space between the navbar and image */
+}
+
+.page-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+.btn-custom {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-blue {
+    background-color: #007bff;
+    border: none;
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: #0056b3;
+}
+
+.btn-red {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+}
+
+.btn-red:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .page-display {
+        max-width: 100%;
+    }
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
     .page-display {
         max-width: 100%;

@@ -3,149 +3,589 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <title>Dr. Keshav Sinha</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <!-- Custom CSS -->
+    <title>Dr. Keshav Sinha - KSLAB Cryptic Innovations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        .navbar-custom {
-            background-color: #003b6f; /* Ossan Blue background for the navbar */
+        :root {
+            --primary-color: #003b6f;
+            --secondary-color: #ffcc00;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+            --card-background: #ffffff;
         }
-        .navbar-custom .navbar-brand,
-        .navbar-custom .nav-link {
-            color: white; /* White text color for navbar items */
-            font-weight: bold; /* Bold font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .navbar-custom .navbar-brand:hover {
-            color: #ffcc00; /* Yellow text color on hover */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
         }
-        .navbar-custom .nav-link:hover {
-            color: #ffcc00; /* Yellow text color on hover */
+        .navcontainer{
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .navbar-custom .dropdown-menu {
-            background-color: #003b6f; /* Ossan Blue background for dropdown menus */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            
         }
-        .navbar-custom .dropdown-item {
-            color: white; /* White text color for dropdown items */
+        header {
+            background-color: rgba(0, 59, 111, 0.9);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
-        .navbar-custom .dropdown-item:hover {
-            background-color: #ffcc00; /* Yellow background on hover */
-            color: #003b6f; /* Ossan Blue text color on hover */
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .navbar-custom .navbar-toggler {
-            border: none; /* Remove border */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
         }
-        .navbar-custom .navbar-toggler-icon {
-            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.8)" stroke-width="2" d="M5 8h20M5 14h20M5 20h20"/%3E%3C/svg%3E'); /* Change the icon color to white */
+        .nav-links {
+            display: flex;
+            list-style: none;
         }
-        .navbar-nav {
-            text-align: center; /* Center-align the navbar items */
+        .nav-links li {
+            margin-left: 2rem;
         }
-        .navbar-nav .nav-item {
-            display: inline-block; /* Display items inline */
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        #hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin-top: 20px;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        section {
+            padding: 5rem 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 1rem auto 0;
+        }
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .about-text {
+            flex: 2;
+            padding-right: 2rem;
+        }
+        .about-links {
+            flex: 1;
+        }
+        .about-links ul {
+            list-style: none;
+        }
+        .about-links li {
+            margin-bottom: 1rem;
+        }
+        .about-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .about-links a:hover {
+            color: var(--accent-color);
+        }
+        .publication-grid, .lab-grid, .notes-grid, .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .publication-card, .lab-card, .note-card, .project-card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .publication-card:hover, .lab-card:hover, .note-card:hover, .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .publication-card i, .lab-card i, .note-card i, .project-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .publication-card h3, .lab-card h3, .note-card h3, .project-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        #forums {
+            background-color: #f9f9f9;
+        }
+        .forum-card {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .forum-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .forum-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .forum-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .forum-stats {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .join-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .join-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        #contact {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+        }
+        .email-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        .email-link:hover {
+            color: #fff;
+        }
+        .social-links {
+            margin-top: 2rem;
+        }
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 59, 111, 0.9);
+                padding: 1rem 0;
+            }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            .hamburger {
+                display: block;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            #hero h2 {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1 class="text-center text-white bg-dark py-2">KSLAB Cryptic Innovations</h1>
+        <nav id="navbar">
+            <div class="navcontainer">
+                <a href="#" class="logo">KSLAB</a>
+                <ul class="nav-links">
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#lab">Lab Practical</a></li>
+                    <li><a href="#notes">Notes</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#forums">Forums</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <a class="navbar-brand" href="https://www.linkedin.com/in/dr-keshav-sinha-a764b01ba/" target="_blank">Dr. Keshav Sinha</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Publications
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                        <a class="dropdown-item" href="journal.html">Journal Papers</a>
-                        <a class="dropdown-item" href="conference.html">Conference Papers</a>
-                        <a class="dropdown-item" href="book.html">Books</a>
-						<a class="dropdown-item" href="bookchapters.html">Book Chapters</a>
+    <main>
+        <section id="hero">
+            <div id="particles-js"></div>
+            <div class="container hero-content">
+                <h1 data-aos="fade-up">Dr. Keshav Sinha</h1>
+                <h2 data-aos="fade-up" data-aos-delay="200">KSLAB Cryptic Innovations</h2>
+                <p data-aos="fade-up" data-aos-delay="400">Pioneering Data Security and Cryptography</p>
+                <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="600">Get in Touch</a>
+            </div>
+        </section>
+
+      <section id="about">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">About Dr. Keshav Sinha</h2>
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <h3>Research Interests</h3>
+                        <p>Data Security | Pseudo Random Number Generator | Optimization | Politics | Policy</p>
+                        <h3>Profile Summary</h3>
+                        <p>Dr. Keshav Sinha is an Assistant Professor specializing in Cryptography and Network Security, with a focus on creating secure environments for multimedia transmission. His research spans conferences and journals in Soft Computing, Humanities, and cyber policy, demonstrating his commitment to enhancing flexibility and innovation in computer science.</p>
+                        <p>With experience as an Assistant Professor at Sarala Birla University and roles at Usha Martin University and CSIR-CIMFR, Dr. Sinha brings a wealth of knowledge to his current position at UPES.</p>
+                        <p>His impressive research portfolio includes 3 SCIE journal papers, 10 Scopus-indexed book chapters, and 9 Scopus conference papers, covering data security, security protocols, optimization, and cyber policies. As a respected reviewer and mentor to M.Tech and Ph.D. scholars, Dr. Sinha continues to drive advancements in his field.</p>
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Lab Practical
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="caesarcipher.html">Caesar Cipher</a>
-                        <a class="dropdown-item" href="password.html">Password Strength Checker</a>
-                        <a class="dropdown-item" href="steganography.html">Steganography</a>
+                    <div class="about-links" data-aos="fade-left">
+                        <h3>Find Dr. Sinha Online</h3>
+                        <ul>
+                            <li><a href="https://orcid.org/0000-0003-1053-3911" target="_blank"><i class="fab fa-orcid"></i> Orcid ID</a></li>
+                            <li><a href="https://www.scopus.com/authid/detail.uri?authorId=7102371104" target="_blank"><i class="fas fa-database"></i> Scopus ID</a></li>
+                            <li><a href="https://scholar.google.com/citations?user=nuwPYnsAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar ID</a></li>
+                        </ul>
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Notes
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Publications</h2>
+                <div class="publication-grid">
+                    <a href="journal.html" class="publication-card" data-aos="fade-up">
+                        <i class="fas fa-book"></i>
+                        <h3>Journal Papers</h3>
+                        <p>Explore Dr. Sinha's contributions to academic journals</p>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                        <a class="dropdown-item" href="computergraphic.html">Computer Graphics</a>
-                        <a class="dropdown-item" href="softwareengg.html">Software Engineering</a>
-                        <a class="dropdown-item" href="database.html">Data Base</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Projects
+                    <a href="conference.html" class="publication-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-microphone"></i>
+                        <h3>Conference Papers</h3>
+                        <p>Discover presentations at international conferences</p>
                     </a>
-                     <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-                        <a class="dropdown-item" href="ongoing.html">Ongoing Projects</a>
-                        <a class="dropdown-item" href="completed.html">Completed Projects</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Forums
+                    <a href="book.html" class="publication-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Books</h3>
+                        <p>Read Dr. Sinha's published works in the field</p>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
-                        <a class="dropdown-item" href="forum.html">Security Discussions</a>
+                    <a href="bookchapters.html" class="publication-card" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fas fa-bookmark"></i>
+                        <h3>Book Chapters</h3>
+                        <p>Delve into specific topics covered in various publications</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="lab">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Lab Practical</h2>
+                <div class="lab-grid">
+                    <a href="caesarcipher.html" class="lab-card" data-aos="fade-up">
+                        <i class="fas fa-lock"></i>
+                        <h3>Caesar Cipher</h3>
+                        <p>Explore this classic encryption technique</p>
+                    </a>
+                    <a href="password.html" class="lab-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-key"></i>
+                        <h3>Password Strength Checker</h3>
+                        <p>Learn about secure password creation</p>
+                    </a>
+                    <a href="steganography.html" class="lab-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-eye-slash"></i>
+                        <h3>Steganography</h3>
+                        <p>Discover the art of hiding information</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="notes">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Notes</h2>
+                <div class="notes-grid">
+                    <a href="computergraphic.html" class="note-card" data-aos="fade-up">
+                        <i class="fas fa-desktop"></i>
+                        <h3>Computer Graphics</h3>
+                    </a>
+                    <a href="softwareengg.html" class="note-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Software Engineering</h3>
+                    </a>
+                    <a href="database.html" class="note-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-database"></i>
+                        <h3>Database</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Projects</h2>
+                <div class="project-grid">
+                    <a href="ongoing.html" class="project-card" data-aos="fade-up">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Ongoing Projects</h3>
+                        <p>Explore current research initiatives</p>
+                    </a>
+                    <a href="completed.html" class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Completed Projects</h3>
+                        <p>Review past successful projects</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section id="forums">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Forums</h2>
+                <div class="forum-card" data-aos="fade-up">
+                    <h3>Cryptography and Network Security Forum</h3>
+                    <p>Join our vibrant community to discuss the latest trends, challenges, and innovations in cryptography and network security. Connect with experts, share your insights, and stay updated on cutting-edge research.</p>
+                    <div class="forum-stats">
+                        <span><i class="fas fa-users"></i> 1,500+ Members</span>
+                        <span><i class="fas fa-comments"></i> 10,000+ Posts</span>
                     </div>
-                </li>
-            </ul>
+                    <a href="#" class="join-button" id="joinForumBtn">Join the Forum</a>
+                </div>
+            </div>
+        </section>
+
+          <section id="contact">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Contact</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Get in touch with Dr. Keshav Sinha</p>
+                <a href="mailto:keshav.sinha@ddn.upes.ac.in" class="email-link" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-envelope"></i>
+                    keshav.sinha@ddn.upes.ac.in
+                </a>
+                <div class="social-links" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-researchgate"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dr. Keshav Sinha - KSLAB Cryptic Innovations</p>
         </div>
-    </nav>
-
-    <div class="container my-4">
-        <section id="about">
-            <h3>Research Interests</h3>
-            <p>Data Security | Pseudo Random Number Generator | Optimization | Politics | Policy</p>
-
-            <h2>Profile Summary</h2>
-            <p>Dr. Keshav Sinha is an Assistant Professor with a focus on Cryptography and Network Security, specializing in creating secure environments for multimedia transmission. His extensive research and numerous publications span conferences and journals in Soft Computing, Humanities, and cyber policy. Dr. Sinha is dedicated to enhancing flexibility and innovation within the computer science community.</p>
-
-<p>Prior to his current role at UPES, Dr. Sinha served as an Assistant Professor at Sarala Birla University, and held positions as a Faculty Associate and Guest Faculty at Usha Martin University. He also gained valuable experience as a Project Assistant Level-II at CSIR-CIMFR and ECL in Dhanbad and Kajora Area.</p>
-
-<p>Dr. Sinha boasts a significant research record with 3 SCIE journal papers, 10 Scopus-indexed book chapters, and 9 Scopus conference papers. His work covers data security, security protocols, optimization, and cyber policies. He is a respected reviewer for IGI Global, Journal of Intelligent and Fuzzy Systems (JIFS), and other notable journals. Dr. Sinha has also guided M.Tech and Ph.D. scholars, contributing to their academic and research growth. His commitment to research and mentoring exemplifies his dedication to advancing the field and inspiring his students to excel.</p>
-
-            <h3>For more information, you can find Dr. Sinha on:</h3>
-            <ul>
-                <li><a href="https://orcid.org/0000-0003-1053-3911" target="_blank">Orcid ID</a></li>
-                <li><a href="https://www.scopus.com/authid/detail.uri?authorId=7102371104" target="_blank">Scopus ID</a></li>
-                <li><a href="https://scholar.google.com/citations?user=nuwPYnsAAAAJ&hl=en" target="_blank">Google Scholar ID</a></li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:keshav.sinha@ddn.upes.ac.in">keshav.sinha@ddn.upes.ac.in</a></p>
-        </section>
-    </div>
-
-    <footer class="text-center py-3 bg-dark text-white">
-        <p>Dr. Keshav Sinha &copy; 2024</p>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Particles.js configuration
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
+                opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            },
+            retina_detect: true
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Sticky navbar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Forum join button interaction
+        const joinForumBtn = document.getElementById('joinForumBtn');
+        joinForumBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Thank you for your interest! You will be redirected to the forum page.');
+            // Here you would typically redirect to a registration page
+            window.location.href = 'forum.html';
+        });
+    </script>
 </body>
 </html>
