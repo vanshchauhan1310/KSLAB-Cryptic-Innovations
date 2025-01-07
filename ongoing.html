@@ -3,159 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Keshav Sinha</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <!-- Custom CSS -->
+    <title>Projects - KSLAB Cryptic Innovations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .navbar-custom {
-            background-color: #003b6f; /* Ossan Blue background for the navbar */
+        :root {
+            --primary-color: #003b6f;
+            --secondary-color: #ffcc00;
+            --text-color: #333;
+            --background-color: #f4f4f4;
         }
-        .navbar-custom .navbar-brand,
-        .navbar-custom .nav-link {
-            color: white; /* White text color for navbar items */
-            font-weight: bold; /* Bold font */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .navbar-custom .navbar-brand:hover {
-            color: #ffcc00; /* Yellow text color on hover */
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
         }
-        .navbar-custom .nav-link:hover {
-            color: #ffcc00; /* Yellow text color on hover */
+
+      
+        .navcontainer{
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .navbar-custom .dropdown-menu {
-            background-color: #003b6f; /* Ossan Blue background for dropdown menus */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .navbar-custom .dropdown-item {
-            color: white; /* White text color for dropdown items */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
-        .navbar-custom .dropdown-item:hover {
-            background-color: #ffcc00; /* Yellow background on hover */
-            color: #003b6f; /* Ossan Blue text color on hover */
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .navbar-custom .navbar-toggler {
-            border: none; /* Remove border */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
         }
-        .navbar-custom .navbar-toggler-icon {
-            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.8)" stroke-width="2" d="M5 8h20M5 14h20M5 20h20"/%3E%3C/svg%3E'); /* Change the icon color to white */
+        .nav-links {
+            display: flex;
+            list-style: none;
         }
-        .navbar-nav {
-            text-align: center; /* Center-align the navbar items */
+        .nav-links li {
+            position: relative;
+            margin-left: 2rem;
         }
-        .navbar-nav .nav-item {
-            display: inline-block; /* Display items inline */
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 0.5rem 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        main {
+            padding-top: 120px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-link:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-
- <header>
-        <h1 class="text-center text-white bg-dark py-2"> KSLAB Cryptic Innovations</h1>
+     <header>
+        <nav id="navbar">
+            <div class="navcontainer">
+                <a href="index.html" class="logo">KSLAB</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#publications">Publications</a></li>
+                    <li><a href="index.html#lab">Lab Practical</a></li>
+                    <li><a href="index.html#notes">Notes</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#forums">Forums</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <a class="navbar-brand" href="index.html">Dr. Keshav Sinha</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Publications
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                        <a class="dropdown-item" href="journal.html">Journal Papers</a>
-                        <a class="dropdown-item" href="conference.html">Conference Papers</a>
-                        <a class="dropdown-item" href="book.html">Books</a>
-                        <a class="dropdown-item" href="bookchapters.html">Book Chapters</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Lab Practical
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="caesarcipher.html">Caesar Cipher</a>
-                        <a class="dropdown-item" href="password.html">Password Strength Checker</a>
-                        <a class="dropdown-item" href="steganography.html">Steganography</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Notes
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                        <a class="dropdown-item" href="computergraphic.html">Computer Graphics</a>
-                        <a class="dropdown-item" href="softwareengg.html">Software Engineering</a>
-                        <a class="dropdown-item" href="database.html">Database Management System</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Projects
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-                        <a class="dropdown-item" href="ongoing.html">Ongoing Projects</a>
-                        <a class="dropdown-item" href="completed.html">Completed Projects</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Forums
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
-                        <a class="dropdown-item" href="forum.html">Security Discussions</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-	
-	
-	
-	
 
-    <div class="container my-4">
-        <section id="about">
-            <!-- Adding a table with PDF links -->
-            <h2 class="text-center">Database Management System</h2>
-            <table class="table table-bordered table-hover mt-4">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>PDF Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Paper 1</td>
-                        <td>Overview of encryption methods</td>
-                        <td><a href="files/L1.pdf" target="_blank">Download PDF</a></td>
-                    </tr>
-                    <tr>
-                        <td>Paper 2</td>
-                        <td>Research on pseudo-random number generation</td>
-                        <td><a href="files/paper2.pdf" target="_blank">Download PDF</a></td>
-                    </tr>
-                    <tr>
-                        <td>Paper 3</td>
-                        <td>Optimizing cryptographic techniques</td>
-                        <td><a href="files/paper3.pdf" target="_blank">Download PDF</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </div>
 
-    <footer class="text-center py-3 bg-dark text-white">
-        <p>Dr. Keshav Sinha &copy; 2024</p>
+    <main>
+        <div class="container">
+            <section id="ongoing">
+                <h2 class="section-title">Ongoing Projects</h2>
+                <div class="projects-container">
+                    <!-- Ongoing Project 1 -->
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 1" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Quantum-Resistant Cryptography</h3>
+                            <p class="project-description">Developing new cryptographic algorithms that can withstand attacks from quantum computers.</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ongoing Project 2 -->
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 2" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">AI-Powered Threat Detection</h3>
+                            <p class="project-description">Implementing machine learning algorithms to detect and prevent cyber threats in real-time.</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                            <!-- Ongoing Project 1 -->
+                            <div class="project-card">
+                                <img src="https://via.placeholder.com/300x200" alt="Project 1" class="project-image">
+                                <div class="project-content">
+                                    <h3 class="project-title">Quantum-Resistant Cryptography</h3>
+                                    <p class="project-description">Developing new cryptographic algorithms that can withstand attacks from quantum computers.</p>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">Demo</a>
+                                        <a href="#" class="project-link">Source Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Ongoing Project 2 -->
+                            <div class="project-card">
+                                <img src="https://via.placeholder.com/300x200" alt="Project 2" class="project-image">
+                                <div class="project-content">
+                                    <h3 class="project-title">AI-Powered Threat Detection</h3>
+                                    <p class="project-description">Implementing machine learning algorithms to detect and prevent cyber threats in real-time.</p>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">Demo</a>
+                                        <a href="#" class="project-link">Source Code</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                                    <!-- Ongoing Project 1 -->
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 1" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Quantum-Resistant Cryptography</h3>
+                            <p class="project-description">Developing new cryptographic algorithms that can withstand attacks from quantum computers.</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ongoing Project 2 -->
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 2" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">AI-Powered Threat Detection</h3>
+                            <p class="project-description">Implementing machine learning algorithms to detect and prevent cyber threats in real-time.</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+         
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dr. Keshav Sinha - KSLAB Cryptic Innovations</p>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to project cards
+        const projectCards = document.querySelectorAll('.project-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        projectCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
