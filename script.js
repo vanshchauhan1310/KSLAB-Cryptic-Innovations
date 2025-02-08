@@ -534,11 +534,53 @@ function showNextPage() {
     }
 }
 
-// Toggle light and dark mode
+// Store the current theme preference
+let currentTheme = localStorage.getItem('theme') || 'light-mode';
+
+// Function to toggle between light and dark modes
 function toggleMode() {
-    document.body.classList.toggle("dark-mode");
-    document.body.classList.toggle("light-mode");
+    const body = document.body;
+    const navbar = document.querySelector('.navbar');
+    
+    // Toggle between modes
+    if (body.classList.contains('light-mode')) {
+        // Switch to dark mode
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        navbar.classList.remove('navbar-light');
+        navbar.classList.add('navbar-dark');
+        currentTheme = 'dark-mode';
+    } else {
+        // Switch to light mode
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        navbar.classList.remove('navbar-dark');
+        navbar.classList.add('navbar-light');
+        currentTheme = 'light-mode';
+    }
+    
+    // Save the theme preference
+    localStorage.setItem('theme', currentTheme);
 }
+
+// Apply the saved theme when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const navbar = document.querySelector('.navbar');
+    
+    // Apply saved theme or default to light mode
+    if (currentTheme === 'dark-mode') {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        navbar.classList.remove('navbar-light');
+        navbar.classList.add('navbar-dark');
+    } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        navbar.classList.remove('navbar-dark');
+        navbar.classList.add('navbar-light');
+    }
+});
 
 // Initialize the app
 loadChapters();
