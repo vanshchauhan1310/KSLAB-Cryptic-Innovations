@@ -27,13 +27,7 @@ body {
 }
 
 /* Header Styles */
-header {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(37, 99, 235, 0.95);
-    backdrop-filter: blur(10px);
-}
+
 
 .navcontainer {
     display: flex;
@@ -57,7 +51,7 @@ header {
 }
 
 .nav-links a {
-    color: var(--white);
+    color: black;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -70,7 +64,7 @@ header {
 /* Hero Section */
 #hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, #ff3131,#ff914d);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -135,14 +129,14 @@ header {
 }
 
 .primary-btn {
-    background-color: var(--white);
-    color: var(--primary-color);
+    background-color: black;
+    color: white;
 }
 
 .secondary-btn {
     background-color: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
+    color: white;
+    border: 2px solid black;
 }
 
 .primary-btn:hover {
@@ -151,8 +145,8 @@ header {
 }
 
 .secondary-btn:hover {
-    background-color: var(--white);
-    color: var(--primary-color);
+    background-color: black;
+    color: white;
     transform: translateY(-3px);
 }
 
@@ -192,10 +186,11 @@ section {
 }
 
 .section-title {
+    
+    color: #ff3131;
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--primary-color);
     font-family: 'Playfair Display', serif;
 }
 
@@ -358,12 +353,14 @@ body {
     
 }
 header {
-    background-color: rgba(0, 59, 111, 0.9);
-    padding: 1rem 0;
     position: fixed;
     width: 100%;
     z-index: 1000;
     transition: all 0.3s ease;
+    height: 100px;
+    position: fixed;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 #navbar {
     display: flex;
@@ -384,12 +381,12 @@ header {
     margin-left: 2rem;
 }
 .nav-links a {
-    color: #fff;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
     position: relative;
 }
+
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -550,7 +547,7 @@ section {
 }
 .forum-card h3 {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: #ff3131;
     margin-bottom: 1rem;
 }
 .forum-card p {
@@ -720,7 +717,7 @@ footer {
 }
 
 .terms-section h2 {
-    color: var(--primary-color);
+    color: #ff3131;
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     display: flex;
@@ -795,7 +792,7 @@ footer {
 }
 
 .footer-section h3 {
-    color: var(--secondary-color);
+    color: #ff3131;
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
 }
