@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Keshav Sinha</title>
+    <title>EdCatalyst</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="style.css">
+
     <!-- Custom CSS -->
     <style>
         .navbar-custom {
@@ -48,79 +49,39 @@
     </style>
 </head>
 <body>
+    <header>
+        <nav id="navbar">
+            <div class="navcontainer">
+                <a href="index.html" class="logo">EdCatalyst</a>
+                <ul class="nav-links">
+                
+                    <li><a href="index.html#notes">Notes</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#forums">Forums</a></li>
 
- <header>
-        <h1 class="text-center text-white bg-dark py-2"> KSLAB Cryptic Innovations</h1>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <a class="navbar-brand" href="index.html">Dr. Keshav Sinha</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Publications
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                        <a class="dropdown-item" href="journal.html">Journal Papers</a>
-                        <a class="dropdown-item" href="conference.html">Conference Papers</a>
-                        <a class="dropdown-item" href="book.html">Books</a>
-                        <a class="dropdown-item" href="bookchapters.html">Book Chapters</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Lab Practical
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="caesarcipher.html">Caesar Cipher</a>
-                        <a class="dropdown-item" href="password.html">Password Strength Checker</a>
-                        <a class="dropdown-item" href="steganography.html">Steganography</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Notes
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                        <a class="dropdown-item" href="computergraphic.html">Computer Graphics</a>
-                        <a class="dropdown-item" href="softwareengg.html">Software Engineering</a>
-                        <a class="dropdown-item" href="database.html">Database Management System</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Projects
-                    </a>
-                     <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-                        <a class="dropdown-item" href="ongoing.html">Ongoing Projects</a>
-                        <a class="dropdown-item" href="completed.html">Completed Projects</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Forums
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
-                        <a class="dropdown-item" href="forum.html">Security Discussions</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-	
+    	
 	
 	
 	
 
-    <div class="container my-4">
+    
         <section id="about">
             <!-- Adding a table with PDF links -->
             <h2 class="text-center">Software Engineering</h2>
-            <table class="table table-bordered table-hover mt-4">
+            <table class="table table-border table-hover mt-4 mx-2" style="width: 98%;">
                 <thead class="thead-dark">
                     <tr>
                         <th>Title</th>
@@ -147,11 +108,51 @@
                 </tbody>
             </table>
         </section>
-    </div>
+    
 
-    <footer class="text-center py-3 bg-dark text-white">
-        <p>Dr. Keshav Sinha &copy; 2024</p>
-    </footer>
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>EdCatalyst</h3>
+                        <p>Empowering individuals and organizations through cutting-edge software development and comprehensive computer science education.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <div class="Qlinks">
+                            <div class="left-link">
+                            <ul>
+                        <li><a href="#notes">Notes</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#forums">Forums</a></li>
+                            </ul>
+                            </div>
+                            <div class="right-link">
+                                <ul>
+                                    <li><a href="terms.html">Terms & Conditions</a></li>
+                                    <li><a href="privacy.html">Privacy Policy</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="footer-section">
+                        <h3>Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="mailto:keshav.sinha@ddn.upes.ac.in" style="font-size: 15px;">
+                                <i class="fa-solid fa-envelope"></i>  keshav.sinha@ddn.upes.ac.in
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2024 EdCatalyst. All rights reserved.</p>
+                </div>
+            </div>
+          
+        </footer>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ID Card Generator App</title>
+    <title>Event Management App</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
@@ -16,26 +16,26 @@
             --background-color: #f4f4f4;
             --card-background: #ffffff;
         }
-
+    
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+    
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
         }
-
+    
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
         }
-
+    
         header {
             background-color: rgba(0, 59, 111, 0.9);
             padding: 1rem 0;
@@ -44,7 +44,7 @@
             z-index: 1000;
             transition: all 0.3s ease;
         }
-
+    
         .navcontainer {
             width: 90%;
             max-width: 1200px;
@@ -53,30 +53,30 @@
             justify-content: space-between;
             align-items: center;
         }
-
+    
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             color: #fff;
             text-decoration: none;
         }
-
+    
         .nav-links {
             display: flex;
             list-style: none;
         }
-
+    
         .nav-links li {
             margin-left: 2rem;
         }
-
+    
         .nav-links a {
             color: #fff;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
-
+    
         #hero {
             height: 100vh;
             display: flex;
@@ -87,30 +87,30 @@
             position: relative;
             overflow: hidden;
         }
-
+    
         #particles-js {
             position: absolute;
             width: 100%;
             height: 100%;
             background-color: var(--primary-color);
         }
-
+    
         .hero-content {
             position: relative;
             z-index: 1;
         }
-
+    
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             font-family: 'Playfair Display', serif;
         }
-
+    
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
         }
-
+    
         .cta-button {
             display: inline-block;
             padding: 1rem 2rem;
@@ -121,17 +121,17 @@
             border-radius: 50px;
             transition: all 0.3s ease;
         }
-
+    
         .cta-button:hover {
             background-color: #fff;
             transform: translateY(-3px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-
+    
         section {
             padding: 5rem 0;
         }
-
+    
         .section-title {
             font-size: 2.5rem;
             text-align: center;
@@ -139,14 +139,14 @@
             font-family: 'Playfair Display', serif;
             color: var(--primary-color);
         }
-
+    
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
+    
         .feature-card {
             background: var(--card-background);
             padding: 2rem;
@@ -155,27 +155,27 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
-
+    
         .feature-card:hover {
             transform: translateY(-10px);
         }
-
+    
         .feature-card i {
             font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
-
+    
         .feature-card h3 {
             margin-bottom: 1rem;
             color: var(--primary-color);
         }
-
+    
         .steps-container {
             max-width: 800px;
             margin: 0 auto;
         }
-
+    
         .step {
             display: flex;
             align-items: flex-start;
@@ -185,7 +185,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
+    
         .step-number {
             background: var(--primary-color);
             color: #fff;
@@ -199,56 +199,56 @@
             margin-right: 1.5rem;
             flex-shrink: 0;
         }
-
+    
         .step-content {
             flex: 1;
         }
-
+    
         .step h3 {
             margin-bottom: 0.5rem;
             color: var(--primary-color);
         }
-
+    
         .preview-container {
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 3rem 0;
         }
-
+    
         .phone-mockup {
             max-width: 300px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-
+    
         footer {
             background-color: var(--primary-color);
             color: #fff;
             padding: 3rem 0;
             text-align: center;
         }
-
+    
         .social-links {
             margin-top: 2rem;
         }
-
+    
         .social-links a {
             color: #fff;
             font-size: 1.5rem;
             margin: 0 10px;
             transition: color 0.3s ease;
         }
-
+    
         .social-links a:hover {
             color: var(--secondary-color);
         }
-
+    
         faq-container, .testimonial-container {
             max-width: 800px;
             margin: 0 auto;
         }
-
+    
         .faq-item {
             margin-bottom: 1.5rem;
             background: var(--card-background);
@@ -256,7 +256,7 @@
             padding: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
+    
         .faq-question {
             font-weight: 600;
             color: var(--primary-color);
@@ -265,23 +265,23 @@
             justify-content: space-between;
             align-items: center;
         }
-
+    
         .faq-question::after {
             content: '\f107';
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
             transition: transform 0.3s ease;
         }
-
+    
         .faq-question.active::after {
             transform: rotate(180deg);
         }
-
+    
         .faq-answer {
             margin-top: 1rem;
             display: none;
         }
-
+    
         .testimonial-card {
             background: var(--card-background);
             border-radius: 10px;
@@ -289,17 +289,17 @@
             margin-bottom: 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
+    
         .testimonial-content {
             font-style: italic;
             margin-bottom: 1rem;
         }
-
+    
         .testimonial-author {
             font-weight: 600;
             color: var(--primary-color);
         }
-
+    
         @media (min-width: 768px) {
             .testimonial-grid {
                 display: grid;
@@ -307,37 +307,38 @@
                 gap: 2rem;
             }
         }
-
+    
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-
+    
             .nav-links {
                 display: none;
             }
-
+    
             .step {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
-
+    
             .step-number {
                 margin-bottom: 1rem;
                 margin-right: 0;
             }
         }
     </style>
+    
 </head>
 <body>
     <header>
         <nav class="navcontainer">
-            <a href="#" class="logo">ID Card Generator</a>
+            <a href="#" class="logo">Event Management App</a>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
-                <li><a href="#how-to-install">Installation</a></li>
-                <li><a href="#preview">Preview</a></li>
+                <li><a href="#how-to-use">How to Use</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -346,9 +347,22 @@
     <section id="hero">
         <div id="particles-js"></div>
         <div class="hero-content">
-            <h1 data-aos="fade-up">ID Card Generator</h1>
-            <p data-aos="fade-up" data-aos-delay="200">Create professional ID cards instantly with our easy-to-use mobile application</p>
+            <h1 data-aos="fade-up">Event Management App</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Simplify and enhance your event organizing experience</p>
             <a href="#download" class="cta-button" data-aos="fade-up" data-aos-delay="400">Download Now</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Us</h2>
+            <p data-aos="fade-up" data-aos-delay="200">
+                Welcome to our Event Management App, a cutting-edge solution designed to simplify and
+                enhance the experience of organizing and participating in events. Whether you're an event
+                organizer planning a large-scale conference or an individual attending a community meetup,
+                our app bridges the gap between efficiency and engagement, making events memorable and
+                hassle-free.
+            </p>
         </div>
     </section>
 
@@ -357,76 +371,103 @@
             <h2 class="section-title" data-aos="fade-up">Key Features</h2>
             <div class="features-grid">
                 <div class="feature-card" data-aos="fade-up">
-                    <i class="fas fa-camera"></i>
-                    <h3>Photo Upload</h3>
-                    <p>Easily upload or capture photos directly within the app</p>
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Event Creation</h3>
+                    <p>Easily create and manage events with customizable registration fields</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Customizable Templates</h3>
-                    <p>Choose from multiple professional templates</p>
+                    <i class="fas fa-qrcode"></i>
+                    <h3>E-Card Generation</h3>
+                    <p>Generate e-cards with QR codes for seamless check-in</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-download"></i>
-                    <h3>Easy Export</h3>
-                    <p>Export your ID cards in multiple formats</p>
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Analytics</h3>
+                    <p>Gain insights with detailed event analytics</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="how-to-install" style="background-color: #fff;">
+    <section id="how-to-use" style="background-color: #fff;">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">How to Install</h2>
+            <h2 class="section-title" data-aos="fade-up">Where You Can Use the App</h2>
             <div class="steps-container">
                 <div class="step" data-aos="fade-up">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Download the App</h3>
-                        <p>Visit the Google Play Store or App Store and search for "ID Card Generator"</p>
+                        <h3>Corporate Events</h3>
+                        <p>Conferences, seminars, workshops, and team-building activities</p>
                     </div>
                 </div>
                 <div class="step" data-aos="fade-up" data-aos-delay="200">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Install and Open</h3>
-                        <p>Install the app and open it on your device</p>
+                        <h3>Community Gatherings</h3>
+                        <p>Cultural festivals, social club meetups, and charity events</p>
                     </div>
                 </div>
                 <div class="step" data-aos="fade-up" data-aos-delay="400">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Start Creating</h3>
-                        <p>Begin creating your professional ID cards in minutes</p>
+                        <h3>Educational Programs</h3>
+                        <p>College fests, hackathons, and alumni reunions</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" style="background-color: #f9f9f9;">
+    <section id="pricing" style="background-color: #f9f9f9;">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">What Our Users Say</h2>
-            <div class="testimonial-container">
-                <div class="testimonial-grid">
-                    <div class="testimonial-card" data-aos="fade-up">
-                        <p class="testimonial-content">"This app has revolutionized how we create ID cards for our company. It's so easy to use and the results are professional-looking every time!"</p>
-                        <p class="testimonial-author">- Sarah J., HR Manager</p>
-                    </div>
-                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                        <p class="testimonial-content">"I love the variety of templates available. It made creating ID cards for our school event a breeze. Highly recommended!"</p>
-                        <p class="testimonial-author">- Mike T., Event Organizer</p>
-                    </div>
+            <h2 class="section-title" data-aos="fade-up">Pricing Plans</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <h3>Free Version</h3>
+                    
+                        <p>Event Creation</p>
+                        <p>Participant Registration</p>
+                        <p>E-Card Generation</p>
+                        <p>Basic Event Analytics</p>
+                        <p>QR Code Functionality</p>
+                   
+                   
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Paid Version</h3>
+
+                    <p>Advanced Analytics</p>
+                    <p>Custom Branding</p>
+                    <p>Enhanced QR Code Features</p>
+                    <p>Event Marketing Tools</p>
+                    <p>Multi-Organizer Roles</p>
+                    <p>Priority Support</p>
+                    <p>Cloud Storage</p>
+                    <p>API Integration</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="preview">
+    <section id="why-choose-us">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">App Preview</h2>
-            <div class="preview-container" data-aos="fade-up">
-                <img src="/placeholder.svg?height=600&width=300" alt="App Preview" class="phone-mockup">
+            <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Ease of Use</h3>
+                    <p>Intuitive interface accessible to users of all technical skill levels</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-clock"></i>
+                    <h3>Time-Saving Tools</h3>
+                    <p>Automate repetitive tasks and ensure accuracy</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Enhanced Security</h3>
+                    <p>Prioritize your data's safety with robust encryption and privacy protocols</p>
+                </div>
             </div>
         </div>
     </section>
@@ -436,16 +477,16 @@
             <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
             <div class="faq-container">
                 <div class="faq-item" data-aos="fade-up">
-                    <div class="faq-question">How do I create an ID card?</div>
-                    <div class="faq-answer">To create an ID card, simply open the app, choose a template, upload a photo, fill in the required information, and customize the design as needed. Once you're satisfied, you can save or export your ID card.</div>
+                    <div class="faq-question">How do I create an event?</div>
+                    <div class="faq-answer">To create an event, simply open the app, choose 'Create Event', fill in the required information, and customize as needed. Once you're satisfied, you can publish your event.</div>
                 </div>
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="faq-question">Can I use my own custom design?</div>
-                    <div class="faq-answer">Yes, our app allows you to create custom designs. You can start with a blank template and add your own elements, or modify existing templates to suit your needs.</div>
+                    <div class="faq-question">What's the difference between Free and Paid versions?</div>
+                    <div class="faq-answer">The Free version offers basic event management features, while the Paid version includes advanced analytics, custom branding, enhanced QR code features, and more. Check our Pricing section for a detailed comparison.</div>
                 </div>
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="faq-question">What file formats can I export my ID card in?</div>
-                    <div class="faq-answer">You can export your ID cards in various formats, including PNG, JPEG, and PDF. This allows for easy sharing and printing of your created ID cards.</div>
+                    <div class="faq-question">How secure is my data?</div>
+                    <div class="faq-answer">We prioritize your data's security with robust encryption and privacy protocols. For more details, please refer to our Privacy Policy.</div>
                 </div>
             </div>
         </div>
@@ -455,6 +496,8 @@
         <div class="container">
             <h2>Get In Touch</h2>
             <p>Have questions? Contact us!</p>
+            <p>Email: Keshav.sinha@yandex.com</p>
+            <p>Phone: +91 7004027470</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -467,68 +510,67 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+       // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
 
-        // Particles.js configuration
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#ffffff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5, random: false },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-                move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" },
-                    resize: true
+    // Particles.js configuration
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: "#ffffff" },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: false },
+            size: { value: 3, random: true },
+            line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: { enable: true, mode: "repulse" },
+                onclick: { enable: true, mode: "push" },
+                resize: true
+            }
+        },
+        retina_detect: true
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Sticky header
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+
+    // Add this to your existing JavaScript
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                if (question.classList.contains('active')) {
+                    answer.style.display = 'block';
+                } else {
+                    answer.style.display = 'none';
                 }
-            },
-            retina_detect: true
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
             });
         });
-
-        // Sticky header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
-
-   
-        // Add this to your existing JavaScript
-        document.addEventListener('DOMContentLoaded', (event) => {
-            // FAQ Accordion
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    question.classList.toggle('active');
-                    const answer = question.nextElementSibling;
-                    if (question.classList.contains('active')) {
-                        answer.style.display = 'block';
-                    } else {
-                        answer.style.display = 'none';
-                    }
-                });
-            });
-        });
+    });
     </script>
-
 </body>
 </html>
