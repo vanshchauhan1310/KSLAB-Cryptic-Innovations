@@ -73,6 +73,21 @@ body {
     text-align: center;
     padding: 0 20px;
 }
+.bg-main{
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff3131,#ff914d);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.bg{
+    background: linear-gradient(135deg, #ff3131,#ff914d);
+
+}
 
 .hero-particles {
     position: absolute;
@@ -181,9 +196,9 @@ body {
 }
 
 /* Sections */
-section {
+/* section {
     padding: 5rem 0;
-}
+} */
 
 .section-title {
     
@@ -458,9 +473,9 @@ header {
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-section {
+/* section {
     padding: 9rem 0;
-}
+} */
 .section-title {
     font-size: 2.5rem;
     text-align: center;
@@ -792,7 +807,6 @@ footer {
 }
 
 .footer-section h3 {
-    color: #ff3131;
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
 }
@@ -866,16 +880,46 @@ footer {
 }
 
 /* Light and Dark Mode Styling */
+/* Light mode styles */
 body.light-mode {
     background-color: #f4f4f9;
     color: #333;
 }
 
+body.light-mode .page-display {
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* body.light-mode .navbar {
+    background-color: rgba(255, 49, 49, 0.9);
+} */
+
+/* Dark mode styles */
 body.dark-mode {
     background-color: #1e1e1e;
     color: #f4f4f9;
 }
 
+body.dark-mode .page-display {
+    background-color: #2d2d2d;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+/* 
+body.dark-mode .navbar {
+    background-color: rgba(200, 39, 39, 0.9);
+} */
+
+/* Common styles for both modes */
+.page-display img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Transition effects */
+body, .navbar, .page-display {
+    transition: all 0.3s ease;
+}
 /* Page Display Styling */
 .page-display {
     aspect-ratio: 4 / 3;
@@ -907,6 +951,10 @@ body.dark-mode {
     background-color: #007bff;
     border: none;
     color: white;
+}
+
+.navbar-dark{
+    background: transparent;
 }
 
 .btn-blue:hover {

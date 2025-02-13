@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdCatalyst - Empowering Education Through Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="navcontainer">
+                <a href="#" class="logo"><img src="./assets/logo2.png" width="200px" height="100px"></a>
+                <ul class="nav-links">
+   
+                    <li><a href="notes.html">Notes</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#forums">Forums</a></li>
+                    <li><a href="terms.html">Terms & Condition</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+<main>
+           <section id="notes">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Notes</h2>
+                <div class="notes-grid">
+                    <a href="computergraphic.html" class="note-card" data-aos="fade-up">
+                        <i class="fas fa-desktop"></i>
+                        <h3>Computer Graphics</h3>
+                    </a>
+                    <a href="softwareengg.html" class="note-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Software Engineering</h3>
+                    </a>
+                    <a href="database.html" class="note-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-database"></i>
+                        <h3>Database</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdCatalyst</h3>
+                <p>Empowering individuals and organizations through cutting-edge software development and comprehensive computer science education.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="Qlinks">
+                    <div class="left-link">
+                    <ul>
+                <li><a href="#notes">Notes</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#forums">Forums</a></li>
+                    </ul>
+                    </div>
+                    <div class="right-link">
+                        <ul>
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="mailto:keshav.sinha@ddn.upes.ac.in" style="font-size: 15px;">
+                        <i class="fa-solid fa-envelope"></i>  keshav.sinha@ddn.upes.ac.in
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EdCatalyst. All rights reserved.</p>
+        </div>
+    </div>
+  
+</footer>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+
+
+    // Forum join button interaction
+    const joinForumBtn = document.getElementById('joinForumBtn');
+    joinForumBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Thank you for your interest! You will be redirected to the forum page.');
+        // Here you would typically redirect to a registration page
+        window.location.href = 'forum.html';
+    });
+</script>
+</body>
+</html>
