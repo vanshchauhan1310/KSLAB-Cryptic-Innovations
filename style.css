@@ -362,10 +362,14 @@ body {
     align-items: center;
 }
 .container {
+    padding-top: 60px;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     
+}
+#notes{
+    padding-block: 40px;
 }
 header {
     position: fixed;
