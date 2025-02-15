@@ -51,7 +51,7 @@ body {
 }
 
 .nav-links a {
-    color: black;
+    color: rgb(201, 201, 201);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -382,9 +382,11 @@ header {
     backdrop-filter: blur(10px);
 }
 #navbar {
+    background-color: #1a1a1a;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100px;
 }
 .logo {
     font-family: 'Playfair Display', serif;
@@ -492,7 +494,7 @@ header {
     display: block;
     width: 50px;
     height: 3px;
-    background-color: var(--accent-color);
+    background-color: black;
     margin: 1rem auto 0;
 }
 .about-content {
@@ -670,7 +672,7 @@ footer {
 }
 
 .terms-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, #ff3131,#ff914d);
     padding: 8rem 0 4rem;
     color: white;
     text-align: center;
