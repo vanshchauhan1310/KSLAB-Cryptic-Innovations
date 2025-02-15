@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XOR-Encryption - EdCatalyst</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+   <style>
+        /* Reset and base styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        p{
+          max-width: 85%;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+
+      
+        /* Main content styles */
+        main {
+            flex: 1;
+        }
+
+        .hero, .explore, .featured, .cta {
+            padding: 3rem 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero, .explore, .featured, .cta {
+                padding: 6rem 1.5rem;
+            }
+        }
+
+        .container {
+            padding-top: 100px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav id="navbar">
+            <div class="navcontainer">
+                <a href="index.html" class="logo"><img src="./assets/logo2.png" width="200px" height="100px"></a>
+                <ul class="nav-links">
+   
+                    <li><a href="notes.html">Notes</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#forums">Forums</a></li>
+                    <li><a href="terms.html">Terms & Condition</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1 class="display-4"><b>XOR Encryption</b></h1>
+        <p class="lead">XOR Encryption is a simple symmetric encryption technique that uses the XOR bitwise operation. The same key is used <br> for both encryption and decryption.</p>
+        
+        <div class="row cipher-section">
+            <div class="col-md-6">
+                <h2>Input</h2>
+                <textarea id="input-text" placeholder="Enter text to encrypt/decrypt"></textarea>
+                <input type="text" id="secret-key" placeholder="Enter secret key">
+                <div class="btn-group">
+                    <button onclick="encrypt()" class="btn btn-primary mr-2">Encrypt</button>
+                    <button onclick="decrypt()" class="btn btn-secondary">Decrypt</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Output</h2>
+                <div id="output" class="result">
+                    Results will appear here...
+                </div>
+                <button onclick="copyToClipboard()" class="btn btn-success mt-3">Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function xorCipher(text, key) {
+            // Validate inputs
+            if (!text || !key) {
+                throw new Error('Text and key must not be empty');
+            }
+
+            // Convert text to array of character codes
+            const textChars = Array.from(text);
+            const keyChars = Array.from(key);
+
+            // XOR each character with corresponding key character
+            const encryptedChars = textChars.map((char, index) => {
+                const keyChar = keyChars[index % keyChars.length];
+                return String.fromCharCode(
+                    char.charCodeAt(0) ^ keyChar.charCodeAt(0)
+                );
+            });
+
+            // Convert back to string
+            return encryptedChars.join('');
+        }
+
+        function encrypt() {
+            try {
+                const text = document.getElementById('input-text').value;
+                const key = document.getElementById('secret-key').value;
+                
+                if (!text || !key) {
+                    alert('Please enter both text and secret key');
+                    return;
+                }
+
+                // Convert to base64 to handle special characters
+                const encrypted = btoa(xorCipher(text, key));
+                document.getElementById('output').innerText = encrypted;
+            } catch (error) {
+                alert('Encryption failed: ' + error.message);
+            }
+        }
+
+        function decrypt() {
+            try {
+                const encryptedText = document.getElementById('input-text').value;
+                const key = document.getElementById('secret-key').value;
+                
+                if (!encryptedText || !key) {
+                    alert('Please enter both encrypted text and secret key');
+                    return;
+                }
+
+                // Decode from base64 first
+                const decoded = atob(encryptedText);
+                const decrypted = xorCipher(decoded, key);
+                document.getElementById('output').innerText = decrypted;
+            } catch (error) {
+                alert('Decryption failed: ' + error.message);
+            }
+        }
+
+        function copyToClipboard() {
+            const output = document.getElementById('output').innerText;
+            navigator.clipboard.writeText(output)
+                .then(() => alert('Copied to clipboard!'))
+                .catch(err => alert('Failed to copy: ' + err));
+        }
+    </script>
+</body>
+</html>

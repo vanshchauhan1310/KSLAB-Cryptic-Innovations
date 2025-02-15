@@ -3,212 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Cipher - KSLAB Cryptic Innovations</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <style>
-        :root {
-            --primary-color: #003b6f;
-            --secondary-color: #ffcc00;
-            --accent-color: #ff6b6b;
-            --text-color: #333;
-            --background-color: #f4f4f4;
-            --card-background: #ffffff;
-        }
+    <title>Caesar Cipher - EdCatalyst</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+   <style>
+        /* Reset and base styles */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
+        p{
+          max-width: 85%;
         }
 
-        
-        .navcontainer{
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            overflow-x: hidden;
         }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        header {
-            background-color: var(--primary-color);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        #navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: #fff;
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
+
+
+      
+        /* Main content styles */
         main {
-            padding-top: 80px;
+            flex: 1;
         }
-        .section-title {
-            font-size: 2.5rem;
+
+        .hero, .explore, .featured, .cta {
+            padding: 3rem 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero, .explore, .featured, .cta {
+                padding: 6rem 1.5rem;
+            }
+        }
+
+        .container {
+            padding-top: 100px;
+        }
+
+        .text-center {
             text-align: center;
-            margin-bottom: 2rem;
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
         }
-        .cipher-section {
-            background-color: var(--card-background);
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        .cipher-section h2 {
-            color: var(--primary-color);
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            line-height: 1.2;
             margin-bottom: 1rem;
         }
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        .form-control {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-        .btn-primary:hover {
-            background-color: #002b52;
-        }
-        .btn-secondary {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-        }
-        .btn-secondary:hover {
-            background-color: #e6b800;
-        }
-        #result {
-            margin-top: 1rem;
-            padding: 1rem;
-            background-color: #f0f0f0;
-            border-radius: 4px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 0.5rem;
-            text-align: left;
-        }
-        th {
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-        footer {
-            background-color: var(--primary-color);
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-color);
-                padding: 1rem 0;
-            }
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .nav-links li {
-                margin: 1rem 0;
-            }
-            .hamburger {
-                display: block;
+
+        @media (min-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
+
     <header>
         <nav id="navbar">
             <div class="navcontainer">
-                <a href="index.html" class="logo">KSLAB</a>
+                <a href="index.html" class="logo"><img src="./assets/logo2.png" width="200px" height="100px"></a>
                 <ul class="nav-links">
-                    <li><a href="index.html#publications">Publications</a></li>
-                    <li><a href="index.html#lab">Lab Practical</a></li>
-                    <li><a href="index.html#notes">Notes</a></li>
+   
+                    <li><a href="notes.html">Notes</a></li>
                     <li><a href="index.html#projects">Projects</a></li>
                     <li><a href="index.html#forums">Forums</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="terms.html">Terms & Condition</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -219,75 +91,50 @@
         </nav>
     </header>
 
-    <main>
-        <div class="container">
-            <h1 class="section-title" data-aos="fade-up">Caesar Cipher</h1>
-            <p data-aos="fade-up" data-aos-delay="200">
-                The Caesar Cipher, named after Julius Caesar, is one of the simplest and most well-known encryption techniques. It works by shifting the letters in a message by a fixed number of positions in the alphabet. Despite its simplicity, the Caesar Cipher provides a foundational example of classical encryption methods and introduces key concepts in the field of cryptography. On this page, you'll learn how the Caesar Cipher works, its historical significance, and how to implement it in various programming languages. Whether you're a beginner in cryptography or just curious about ancient encryption methods, this guide will give you a thorough understanding of the Caesar Cipher.
-            </p>
-            
-            <div class="cipher-section" data-aos="fade-up" data-aos-delay="400">
-                <h2>Caesar Cipher Tool</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="text">Text:</label>
-                        <input type="text" class="form-control" id="text" placeholder="Enter text to encrypt/decrypt">
-                    </div>
-                    <div class="form-group">
-                        <label for="shift">Shift:</label>
-                        <input type="number" class="form-control" id="shift" placeholder="Enter shift value">
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="encrypt()">Encrypt</button>
-                    <button type="button" class="btn btn-secondary" onclick="decrypt()">Decrypt</button>
-                </form>
-                <h3 class="mt-4">Result:</h3>
-                <p id="result"></p>
+    <div class="container my-5">
+        <h1 class="display-3"><b>Caesar Cipher</b></h1>
+        <p>The Caesar Cipher, named after Julius Caesar, is one of the simplest and most well-known encryption techniques. It works by shifting the letters in a message by a fixed number of positions in the alphabet. Despite its simplicity, the Caesar Cipher provides a foundational example of classical encryption methods and introduces key concepts in the field of cryptography. On this page, you'll learn how the Caesar Cipher works, its historical significance, and how to implement it in various programming languages. Whether you're a beginner in cryptography or just curious about ancient encryption methods, this guide will give you a thorough understanding of the Caesar Cipher.</p>
+        
+        <div class="cipher-section">
+            <h2>Caesar Cipher Tool</h2>
+            <form>
+                <div class="form-group">
+                    <label for="text">Text:</label>
+                    <input type="text" class="form-control" id="text" placeholder="Enter text to encrypt/decrypt">
+                </div>
+                <div class="form-group">
+                    <label for="shift">Shift:</label>
+                    <input type="number" class="form-control" id="shift" placeholder="Enter shift value">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="encrypt()">Encrypt</button>
+                <button type="button" class="btn btn-secondary" onclick="decrypt()">Decrypt</button>
+            </form>
+            <h3 class="mt-4">Result:</h3>
+            <p id="result"></p>
 
-                <h3 class="mt-4">Details:</h3>
-                <table id="detailsTable">
-                    <thead>
-                        <tr>
-                            <th>Original Character</th>
-                            <th>Original Code</th>
-                            <th>Shifted Code</th>
-                            <th>Shifted Character</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
+            <h3 class="mt-4">Details:</h3>
+            <table class="table table-bordered" id="detailsTable">
+                <thead>
+                    <tr>
+                        <th>Original Character</th>
+                        <th>Original Code</th>
+                        <th>Shifted Code</th>
+                        <th>Shifted Character</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
-    </main>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Dr. Keshav Sinha - KSLAB Cryptic Innovations</p>
-        </div>
-    </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-
-        // Mobile menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-
-        // Sticky navbar
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
-
         function encrypt() {
             const text = document.getElementById('text').value;
             const shift = parseInt(document.getElementById('shift').value);

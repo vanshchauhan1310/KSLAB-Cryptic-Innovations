@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - EdCatalyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+   <style>
+        :root {
+            --primary-color: #003b6f;
+            --secondary-color: #ffcc00;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+
+        main {
+            padding-top: 120px;
+        }
+        #ongoing{
+            padding-bottom: 100px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .projects-container2 {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .projects-container3 {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+
+        }
+
+        .project-link:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="navcontainer">
+                <a href="index.html" class="logo"><img src="./assets/logo2.png" width="200px" height="100px" ></a>
+                <ul class="nav-links">
+   
+                    <li><a href="notes.html">Notes</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#forums">Forums</a></li>
+                    <li><a href="terms.html">Terms & Condition</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="container">
+            <section id="ongoing">
+                <h2 class="section-title">Live Projects</h2>
+                <div class="projects-container">
+                    <!-- Ongoing Project 1 -->
+                    <div class="project-card">
+                        <!-- <img src="/assets/prasanglogo.png" alt="Project 1" class="project-image" height="200px" width="200px"> -->
+                        <div class="project-content">
+                            <h3 class="project-title">CaeserCipher</h3>
+                            <p class="project-description">The Caesar Cipher, named after Julius Caesar, is one of the simplest and most well-known encryption techniques. It works by shifting the letters in a message by a fixed number of positions in the alphabet. Despite its simplicity, the Caesar Cipher provides a foundational example of classical encryption methods and introduces key concepts in the field of cryptography. </p>
+                            <div class="project-links">
+                                <a href="caesarcipher.html" class="project-link">Check it Out </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ongoing Project 2 -->
+                    <div class="project-card">
+                        <!-- <img src="/assets/zapmail.png" alt="Project 2" class="project-image" height="200px" width="200px"> -->
+                        <div class="project-content">
+                            <h3 class="project-title">Password Strength Checker</h3>
+                            <p class="project-description">A Password Strength Checker is a tool or feature that evaluates the strength of a password based on predefined criteria and provides feedback to the user. Its primary purpose is to help users create strong, secure passwords that are resistant to hacking attempts, such as brute force attacks, dictionary attacks, or guessing.</p>
+                            <div class="project-links">
+                                <a href="password.html" class="project-link">Check it Out</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <!-- <img src="/assets/zapmail.png" alt="Project 2" class="project-image" height="200px" width="200px"> -->
+                        <div class="project-content">
+                            <h3 class="project-title">Stegnography</h3>
+                            <p class="project-description">Steganography is the practice of hiding secret information within an ordinary, non-secret file or message to avoid detection. Unlike cryptography, which focuses on making the content of a message unreadable, steganography focuses on concealing the very existence of the message.The goal is to ensure that only the intended recipient knows that the hidden message exists and can retrieve it.
+
+                            </p>
+                            <div class="project-links">
+                                <a href="steganography.html" class="project-link">Check it Out</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+
+                    <div class="projects-container2">
+                        <!-- Ongoing Project 1 -->
+                        <div class="project-card">
+                            <!-- <img src="/assets/prasanglogo.png" alt="Project 1" class="project-image" height="200px" width="200px"> -->
+                            <div class="project-content">
+                                <h3 class="project-title">
+                                    ROT13 Cipher
+                                </h3>
+                                <p class="project-description">The ROT13 Cipher is a simple substitution cipher that replaces each letter in a message with the letter 13 positions after it in the alphabet. It is a special case of the Caesar Cipher, which shifts letters by a fixed number of positions. ROT13 is unique because applying it twice returns the original message, making it its own inverse.                                    . </p>
+                                <div class="project-links">
+                                    <a href="ROT13Cipher.html" class="project-link">Check it Out </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ongoing Project 2 -->
+                        <div class="project-card">
+                            <!-- <img src="/assets/zapmail.png" alt="Project 2" class="project-image" height="200px" width="200px"> -->
+                            <div class="project-content">
+                                <h3 class="project-title">Vigenère Cipher</h3>
+                                <p class="project-description">The Vigenère Cipher is a method of encrypting text by using a simple form of polyalphabetic substitution. It improves upon the Caesar Cipher by using a keyword to shift letters, making it more secure and resistant to frequency analysis attacks. The cipher was named after Blaise de Vigenère, a French cryptographer, although it was originally described by Giovan Battista Bellaso in the 16th century.</p>
+                                <div class="project-links">
+                                    <a href="Vigenere.html" class="project-link">Check it Out</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="project-card">
+                            <!-- <img src="/assets/zapmail.png" alt="Project 2" class="project-image" height="200px" width="200px"> -->
+                            <div class="project-content">
+                                <h3 class="project-title">XOR Encryption</h3>
+                                <p class="project-description">
+                                    XOR encryption is a simple symmetric encryption technique that uses the exclusive OR (XOR) logical operation to encrypt and decrypt data. It is often used in various applications due to its simplicity and speed
+                                </p>
+                                <div class="project-links">
+                                    <a href="XOR-Encryption.html" class="project-link">Check it Out</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        </div>
+                     
+                        <div class="projects-container3">
+                            <!-- Ongoing Project 1 -->
+                            <div class="project-card">
+                                <!-- <img src="/assets/prasanglogo.png" alt="Project 1" class="project-image" height="200px" width="200px"> -->
+                                <div class="project-content">
+                                    <h3 class="project-title">
+                                        AES - Encryption
+                                    </h3>
+                                    <p class="project-description">AES (Advanced Encryption Standard) is a widely used symmetric encryption algorithm that is designed to secure data. It was established by the U.S. National Institute of Standards and Technology (NIST) in 2001 and has since become the standard for encrypting sensitive information. </p>
+                                    <div class="project-links">
+                                        <a href="AES.html" class="project-link">Check it Out </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Ongoing Project 2 -->
+               
+            
+                            </div>
+
+             <!-- Ongoing Project 1 -->
+            </section>
+
+         
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EdCatalyst</h3>
+                    <p>Empowering individuals and organizations through cutting-edge software development and comprehensive computer science education.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="Qlinks">
+                        <div class="left-link">
+                        <ul>
+                    <li><a href="#notes">Notes</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#forums">Forums</a></li>
+                        </ul>
+                        </div>
+                        <div class="right-link">
+                            <ul>
+                                <li><a href="terms.html">Terms & Conditions</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="mailto:keshav.sinha@ddn.upes.ac.in" style="font-size: 15px;">
+                            <i class="fa-solid fa-envelope"></i>  keshav.sinha@ddn.upes.ac.in
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EdCatalyst. All rights reserved.</p>
+            </div>
+        </div>
+      
+    </footer>
+
+    <script>
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to project cards
+        const projectCards = document.querySelectorAll('.project-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        projectCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
