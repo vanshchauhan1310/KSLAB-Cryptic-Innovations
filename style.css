@@ -641,6 +641,7 @@ footer {
         padding: 1rem 0;
     }
     .nav-links.active {
+        background-color: #1a1a1a;;
         display: flex;
         flex-direction: column;
         align-items: center;
