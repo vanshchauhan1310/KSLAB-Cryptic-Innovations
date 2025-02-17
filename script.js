@@ -537,6 +537,39 @@ function showNextPage() {
 // Store the current theme preference
 let currentTheme = localStorage.getItem('theme') || 'light-mode';
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM fully loaded and parsed'); // Log when DOM is ready
+
+    // Select the hamburger menu and navigation links
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Log the elements to ensure they are correctly selected
+    console.log('Hamburger element:', hamburger);
+    console.log('Nav-links element:', navLinks);
+
+    // Check if elements exist
+    if (hamburger && navLinks) {
+        console.log('Both hamburger and nav-links elements found.');
+
+        // Add click event listener to the hamburger menu
+        hamburger.addEventListener('click', function () {
+            console.log('Hamburger clicked!'); // Log when hamburger is clicked
+
+            // Toggle the 'active' class on the hamburger menu
+            hamburger.classList.toggle('active');
+            console.log('Hamburger active class toggled:', hamburger.classList.contains('active'));
+
+            // Toggle the 'active' class on the navigation links
+            navLinks.classList.toggle('active');
+            console.log('Nav-links active class toggled:', navLinks.classList.contains('active'));
+        });
+    } else {
+        console.error('Hamburger or nav-links element not found!');
+    }
+});
+
 // Function to toggle between light and dark modes
 function toggleMode() {
     const body = document.body;
